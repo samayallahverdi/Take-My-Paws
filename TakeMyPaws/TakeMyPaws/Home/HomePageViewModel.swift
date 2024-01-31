@@ -17,16 +17,26 @@ class HomePageViewModel {
     private let manager = HomePageManager()
     
     func getHomeDetails(){
-        manager.getHomeData(endpoint: .main) { data, errorMessage in
+        manager.getData(endpoint: .main) { data, errorMessage in
             if let errorMessage {
                 self.error?(errorMessage)
                 print("error viewModel")
             } else if let data {
                 self.home.append(contentsOf: data)
                 self.success?()
-                print(self.home)
+//                print(self.home)
             }
             
         }
     }
+//    func search(key: String) {
+//    manager.search(endpoint: .main, key: key) { data, errorMessage in
+//        if let errorMessage {
+//            self.error?(errorMessage)
+//        } else if let data {
+//            self.home = data
+//            self.success?()
+//        }
+//    }
+//}
 }
