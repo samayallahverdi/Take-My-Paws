@@ -126,7 +126,12 @@
                 <constraint firstItem="CR4-LL-mwH" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="qb7-AL-qLz"/>
             </constraints>
             <size key="customSize" width="358" height="95"/>
-            <point key="canvasLocation" x="153" y="-68"/>
+            <connections>
+                <outlet property="petEnergy" destination="OCu-Cu-yJF" id="6nW-UD-vFR"/>
+                <outlet property="petGender" destination="zKP-bv-jhR" id="KFY-D8-fJ8"/>
+                <outlet property="petSize" destination="rlj-IP-m1x" id="m8b-gl-BWh"/>
+            </connections>
+            <point key="canvasLocation" x="-285.49618320610688" y="-72.183098591549296"/>
         </collectionViewCell>
     </objects>
     <resources>

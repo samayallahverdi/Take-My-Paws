@@ -21,6 +21,10 @@ class HomePageController: UIViewController {
         homeCollection.register(UINib(nibName: "HomePageCell", bundle: nil), forCellWithReuseIdentifier: "HomePageCell")
         
         configureViewModel()
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = false
     }
     
     func configureViewModel() {

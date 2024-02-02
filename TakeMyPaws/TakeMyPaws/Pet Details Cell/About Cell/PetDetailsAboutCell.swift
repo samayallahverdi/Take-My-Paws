@@ -1,5 +1,5 @@
 //
-//  PetDetailsCell.swift
+//  PetDetailsAboutCell.swift
 //  TakeMyPaws
 //
 //  Created by BUDLCIT on 2024. 01. 11..
@@ -7,8 +7,9 @@
 
 import UIKit
 
-class PetDetailsCell: UICollectionViewCell {
+class PetDetailsAboutCell: UICollectionViewCell {
 
+    @IBOutlet weak var petAbout: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

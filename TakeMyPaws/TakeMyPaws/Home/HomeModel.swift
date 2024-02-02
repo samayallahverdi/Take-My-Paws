@@ -24,6 +24,8 @@ struct HomeModel: Codable {
         let energyLevel, playfullness, friendlinessToOthers, grooming: Int?
         let descriptionAz, descriptionEn, descriptionRu, imageOne: String?
         let imageTwo, imageThree: String?
+        let houseTrained: String?
+        let petFriendly: String?
         let shelterName: String?
         let shelterRequisitiesAz: String?
         let dateCreated: String?
@@ -58,6 +60,8 @@ struct HomeModel: Codable {
             case imageOne = "image_one"
             case imageTwo = "image_two"
             case imageThree = "image_three"
+            case houseTrained = "house_trained"
+            case petFriendly = "pet_friendly"
             case shelterName = "shelter_name"
             case shelterRequisitiesAz = "shelter_requisities_az"
             case dateCreated = "date_created"
