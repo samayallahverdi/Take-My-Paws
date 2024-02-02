@@ -62,7 +62,6 @@ class PetDetailsViewModel {
                 }
                 
                 self.success?()
-                
             }
         }
     }

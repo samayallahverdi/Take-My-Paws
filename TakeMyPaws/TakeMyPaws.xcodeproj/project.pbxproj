@@ -156,7 +156,6 @@
 		25294E932B691363007A668F /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
-				25294E802B67C181007A668F /* UseCase */,
 				25294E942B6913A0007A668F /* Model.swift */,
 				25294E8C2B691145007A668F /* DataBase.swift */,
 			);
@@ -188,6 +187,8 @@
 				25F343EF2B50248B0083742C /* About Cell */,
 				25294E9E2B6ADA45007A668F /* Image Cell */,
 				25294EA32B6BEEED007A668F /* Name Cell */,
+				25294EAD2B6D6518007A668F /* Adress Cell */,
+				25294EB22B6D6554007A668F /* Specification Cell */,
 			);
 			path = "Pet Details Cell";
 			sourceTree = "<group>";
@@ -238,15 +239,13 @@
 				25F343D32B4ECDBE0083742C /* GreetingController.swift */,
 				25F343C42B4D6B6A0083742C /* Core */,
 				25294E932B691363007A668F /* DataManager */,
+				25294E802B67C181007A668F /* UseCase */,
 				25F343D92B4EEB840083742C /* Helper */,
 				25F343C52B4D6B9B0083742C /* Extension */,
 				25F343E52B5001750083742C /* TabBar */,
 				25F343D02B4D6E7E0083742C /* Home */,
 				25294E852B67D6AF007A668F /* PetDetails */,
 				25294EA42B6BEF1B007A668F /* Pet Details Cell */,
-				25F343F42B5153A30083742C /* Home Page Cell */,
-				25294EAD2B6D6518007A668F /* Adress Cell */,
-				25294EB22B6D6554007A668F /* Specification Cell */,
 			);
 			path = TakeMyPaws;
 			sourceTree = "<group>";
@@ -276,6 +275,7 @@
 				25F343CA2B4D6D700083742C /* HomePageManager.swift */,
 				25F343CC2B4D6D880083742C /* HomePageViewModel.swift */,
 				25F343D12B4D72DD0083742C /* HomePageController.swift */,
+				25F343F42B5153A30083742C /* Home Page Cell */,
 				25294E7D2B67BA63007A668F /* SeeAll */,
 			);
 			path = Home;

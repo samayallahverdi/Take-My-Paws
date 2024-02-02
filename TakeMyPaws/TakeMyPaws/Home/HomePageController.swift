@@ -6,27 +6,24 @@
 //
 
 import UIKit
-import RealmSwift
 
 class HomePageController: UIViewController {
     
     @IBOutlet weak var homeCollection: UICollectionView!
     
-    let realm = try! Realm()
-    var DB = DataBase()
     let viewModel = HomePageViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         homeCollection.register(UINib(nibName: "HomePageCell", bundle: nil), forCellWithReuseIdentifier: "HomePageCell")
-        
         configureViewModel()
-        
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = false
     }
     
+    // MARK: - ViewModelConfiguration
     func configureViewModel() {
         
         viewModel.getHomeDetails()
@@ -37,6 +34,7 @@ class HomePageController: UIViewController {
             self.homeCollection.reloadData()
         }
     }
+    // MARK: - SearchTextField
     
     @IBAction func searchTextField(_ sender: UITextField) {
         //           if let text = sender.text {
@@ -58,6 +56,8 @@ class HomePageController: UIViewController {
         navigationController?.show(controller, sender: nil)
     }
 }
+// MARK: - UIConfiguration
+
 extension HomePageController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -82,12 +82,15 @@ extension HomePageController: UICollectionViewDataSource, UICollectionViewDelega
         //
         return cell
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "PetDetailsController") as! PetDetailsController
         controller.selectedId = viewModel.home[indexPath.item].idNumber ?? 0
         navigationController?.show(controller, sender: nil)
     }
 }
+// MARK: - Protocol
+
 extension HomePageController: HomePageCellDelegate {
     func didTapFavoriteButton(index: Int) {
         //        let selectedPet = viewModel.home[index].nameEn

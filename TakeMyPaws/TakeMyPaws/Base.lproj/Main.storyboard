@@ -186,7 +186,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eSH-GQ-nJj">
-                                <rect key="frame" x="0.0" y="-100" width="393" height="952"/>
+                                <rect key="frame" x="0.0" y="-100" width="393" height="865"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <edgeInsets key="layoutMargins" top="8" left="7" bottom="8" right="8"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="D3T-86-hCz">
@@ -201,14 +201,37 @@
                                     <outlet property="delegate" destination="CkS-PY-tG6" id="OG8-cp-tZE"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zMN-SH-YH5">
+                                <rect key="frame" x="83" y="775" width="228" height="43"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="TSw-Z9-fUT"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Adopt now">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="adoptionButtonTapped:" destination="CkS-PY-tG6" eventType="touchUpInside" id="IWh-c3-sf1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nNr-h3-RMF"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="eSH-GQ-nJj" firstAttribute="leading" secondItem="nNr-h3-RMF" secondAttribute="leading" id="9Tc-LU-j8L"/>
                             <constraint firstItem="eSH-GQ-nJj" firstAttribute="top" secondItem="16D-0J-8RU" secondAttribute="top" constant="-100" id="L41-P5-pGV"/>
-                            <constraint firstAttribute="bottom" secondItem="eSH-GQ-nJj" secondAttribute="bottom" id="La1-OG-fLB"/>
                             <constraint firstItem="eSH-GQ-nJj" firstAttribute="trailing" secondItem="nNr-h3-RMF" secondAttribute="trailing" id="LhK-eK-00X"/>
+                            <constraint firstItem="nNr-h3-RMF" firstAttribute="trailing" secondItem="zMN-SH-YH5" secondAttribute="trailing" constant="82" id="PhG-wH-iLY"/>
+                            <constraint firstItem="zMN-SH-YH5" firstAttribute="leading" secondItem="nNr-h3-RMF" secondAttribute="leading" constant="83" id="Q86-xl-nHX"/>
+                            <constraint firstItem="zMN-SH-YH5" firstAttribute="bottom" secondItem="nNr-h3-RMF" secondAttribute="bottom" id="vPd-ay-ZQz"/>
+                            <constraint firstItem="zMN-SH-YH5" firstAttribute="top" secondItem="eSH-GQ-nJj" secondAttribute="bottom" constant="10" id="zlT-Ky-2Ob"/>
                         </constraints>
                     </view>
                     <connections>
@@ -446,6 +469,9 @@
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

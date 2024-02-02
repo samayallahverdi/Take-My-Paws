@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class FavoritePets: Object {
+class AdoptPets: Object {
     @Persisted var petName: String
     @Persisted var userEmail: String
     @Persisted var userPhone: String
