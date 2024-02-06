@@ -13,6 +13,7 @@ class HomePageController: UIViewController {
     
     let viewModel = HomePageViewModel()
     let postModel = PostModel()
+    
    
     
     override func viewDidLoad() {
@@ -21,10 +22,20 @@ class HomePageController: UIViewController {
         configureViewModel()
     }
     
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = false
         //        viewModel.getHomeDetails()
+        print("Samallamlmslf")
+        viewModel.home.removeAll()
+        configureViewModel()
+        
     }
+    
+  
+    // /favorites/5
+    
     
     // MARK: - ViewModelConfiguration
     
@@ -70,6 +81,7 @@ extension HomePageController: UICollectionViewDataSource, UICollectionViewDelega
         cell.petImage.loadImage(url: pet.imageOne ?? "")
         cell.petAdress.text = pet.shelterName
         print("animal", viewModel.home[indexPath.item].isFavorite ?? true)
+        
         
         
 //         Button Configuration
