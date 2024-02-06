@@ -137,7 +137,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kWV-b3-og1">
                                 <rect key="frame" x="10" y="59" width="373" height="793"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="QNP-Li-qvn">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QNP-Li-qvn">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -346,17 +346,43 @@
             </objects>
             <point key="canvasLocation" x="-657.25190839694653" y="-201.40845070422537"/>
         </scene>
-        <!--View Controller-->
+        <!--Favorites-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TakeMyPaws" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FavoritesController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="FavoritesController" customModule="TakeMyPaws" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1xf-0D-iid">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="glS-iK-gvl">
+                                    <size key="itemSize" width="390" height="180"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="AeF-Ol-2Nm"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Udp-lT-cw0"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1xf-0D-iid" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1Ur-59-h1q"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1xf-0D-iid" secondAttribute="bottom" id="9Cr-AF-0eA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1xf-0D-iid" secondAttribute="trailing" id="GVV-3U-X6P"/>
+                            <constraint firstItem="1xf-0D-iid" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="X1b-gn-x4p"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="6ku-5V-Z9m"/>
+                    <navigationItem key="navigationItem" title="Favorites" id="6ku-5V-Z9m"/>
+                    <connections>
+                        <outlet property="favoritesCollection" destination="1xf-0D-iid" id="7a3-AT-gXv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -400,11 +426,11 @@
             </objects>
             <point key="canvasLocation" x="773.28244274809163" y="52.816901408450704"/>
         </scene>
-        <!--Favourite-->
+        <!--Favorite-->
         <scene sceneID="NR8-PJ-kEH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dz8-kw-chD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favourite" image="heart" id="lTl-9e-yuH"/>
+                    <tabBarItem key="tabBarItem" title="Favorite" image="heart" id="lTl-9e-yuH"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2HA-YD-Np4">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>

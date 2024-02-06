@@ -15,6 +15,7 @@ struct HomeModel: Codable {
         let shelterAddressEn: String?
         let shelterAddressRu: String?
         let ageDay: Int?
+        let isFavorite: Bool?
         let nameAz, nameEn, nameRu: String?
         let petType, gender: Bool?
         let birthDate: String?
@@ -41,6 +42,7 @@ struct HomeModel: Codable {
             case shelterAddressEn = "shelter_address_en"
             case shelterAddressRu = "shelter_address_ru"
             case ageDay = "age_day"
+            case isFavorite = "is_favorite"
             case nameAz = "name_az"
             case nameEn = "name_en"
             case nameRu = "name_ru"
@@ -70,57 +72,3 @@ struct HomeModel: Codable {
             case approved, breed
         }
     }
-//
-//    enum Color: String, Codable {
-//        case black = "black"
-//        case brown = "brown"
-//        case grey = "grey"
-//        case orange = "orange"
-//        case peach = "peach"
-//        case white = "white"
-//    }
-//
-//    enum LostOrFound: String, Codable {
-//        case adopt = "Adopt"
-//    }
-//
-//    enum ShelterAddress: String, Codable {
-//        case bakiŞəhəriQalaQəsəbəsiXaşaxunaBağları = "Baki şəhəri, Qala qəsəbəsi, Xaşaxuna Bağları"
-//        case empty = ""
-//        case hövsanQəsəbəsiBağEvləri = "Hövsan qəsəbəsi, bağ evləri"
-//    }
-//
-//    enum ShelterAddressEn: String, Codable {
-//        case bakuCityGalaSettlementKhashakhunaBaglari = "Baku city, Gala settlement, Khashakhuna Baglari"
-//        case empty = ""
-//        case hovsanSettlementDachas = "Hovsan settlement, dachas"
-//        case hövsanQəsəbəsiBağEvləri = "Hövsan qəsəbəsi, bağ evləri"
-//        case the1Q = "`1q"
-//    }
-//
-//    enum ShelterAddressRu: String, Codable {
-//        case empty = ""
-//        case shelterAddressRuПосГовсаныДачныеМассивы = "Пос. Говсаны, Дачные Массивы"
-//        case городБакуПоселокГалаХашахунаБахлары = "Город Баку, поселок Гала, Хашахуна Бахлары"
-//        case посГовсаныДачныеМассивы = "пос. Говсаны, дачные массивы"
-//        case посёлокГовсанДачныеМассивы = "Посёлок Говсан, дачные массивы"
-//    }
-//
-//    enum ShelterName: String, Codable {
-//        case bakuAnimalRescueSociety = "Baku Animal Rescue Society"
-//        case dogHouse = "Dog House"
-//        case friends = "Friends"
-//        case shelterNameFRIENDS = "FRIENDS"
-//    }
-//
-//    enum ShelterRequisitiesAz: String, Codable {
-//        case empty = ""
-//        case shelterRequisitiesAzFalse = "False"
-//    }
-//
-//    enum Size: String, Codable {
-//        case l = "l"
-//        case m = "m"
-//        case s = "s"
-//        case xs = "xs"
-//    }

@@ -12,6 +12,8 @@ class HomePageController: UIViewController {
     @IBOutlet weak var homeCollection: UICollectionView!
     
     let viewModel = HomePageViewModel()
+    let postModel = PostModel()
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,9 +23,11 @@ class HomePageController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = false
+        //        viewModel.getHomeDetails()
     }
     
     // MARK: - ViewModelConfiguration
+    
     func configureViewModel() {
         
         viewModel.getHomeDetails()
@@ -31,31 +35,24 @@ class HomePageController: UIViewController {
             print("Error: \(errorMessage)")
         }
         viewModel.success = {
+            
             self.homeCollection.reloadData()
         }
     }
     // MARK: - SearchTextField
     
     @IBAction func searchTextField(_ sender: UITextField) {
-        //           if let text = sender.text {
-        //        viewModel.search(key: text)
-        //    } else {
-        //        viewModel.home.removeAll()
-        //    }
-        //        // viewModel.success kapanı
-        //        viewModel.success = {
-        //            self.homeCollection.reloadData()
-        //        }
+        
     }
     
-    
-    
+    // MARK: - SeeAllButton
     
     @IBAction func seeAllButtonTapped(_ sender: Any) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "SeeAllController") as! SeeAllController
         navigationController?.show(controller, sender: nil)
     }
 }
+
 // MARK: - UIConfiguration
 
 extension HomePageController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -67,9 +64,18 @@ extension HomePageController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomePageCell", for: indexPath) as! HomePageCell
         let pet = viewModel.home[indexPath.item]
+        
+        cell.viewModel = viewModel
         cell.petName.text = pet.nameEn
         cell.petImage.loadImage(url: pet.imageOne ?? "")
         cell.petAdress.text = pet.shelterName
+        print("animal", viewModel.home[indexPath.item].isFavorite ?? true)
+        
+        
+//         Button Configuration
+        if viewModel.home[indexPath.item].isFavorite == true {
+            cell.isFavorite = false
+        }
         
         if viewModel.home[indexPath.item].gender == true {
             cell.gerderImage.image = UIImage(named: "male")
@@ -77,9 +83,12 @@ extension HomePageController: UICollectionViewDataSource, UICollectionViewDelega
             cell.gerderImage.image = UIImage(named: "female")
         }
         
-        //        cell.tag = indexPath.item
-        //        cell.delegate = self
-        //
+//        Protocol Configuration
+        cell.tag = indexPath.item
+        cell.delegate = self
+        
+        
+        
         return cell
     }
     
@@ -92,24 +101,17 @@ extension HomePageController: UICollectionViewDataSource, UICollectionViewDelega
 // MARK: - Protocol
 
 extension HomePageController: HomePageCellDelegate {
-    func didTapFavoriteButton(index: Int) {
-        //        let selectedPet = viewModel.home[index].nameEn
-        //
-        //        if let selectedPetName = selectedPet {
-        //
-        //            if let existingFavorite = realm.objects(FavoritePets.self).filter("petName = %@", selectedPetName).first {
-        //                try! realm.write {
-        //                    realm.delete(existingFavorite)
-        //                }
-        //            } else {
-        //                let newFavorite = FavoritePets()
-        //                newFavorite.petName = selectedPetName
-        //                try! realm.write {
-        //                    realm.add(newFavorite)
-        //
-        //                }
-        //            }
-        //
-        //        }
+    func didTapFavoriteButton(index: Int, isFavorite: Bool) {
+        let petId = viewModel.home[index].idNumber ?? 0
+        print("index")
+        
+        if isFavorite {
+            postModel.deleteFavorite(petId: petId, fullName: "samaya")
+        } else {
+            postModel.postFavorite(petId: petId, fullName: "samaya")
+        }
     }
+    
+    
 }
+

@@ -16,7 +16,7 @@ class SeeAllController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        seeAllCollection.register(UINib(nibName: "HomePageCell", bundle: nil), forCellWithReuseIdentifier: "HomePageCell")
+        seeAllCollection.register(UINib(nibName: "SeeAllPetsCell", bundle: nil), forCellWithReuseIdentifier: "SeeAllPetsCell")
         configureViewModel()
 //        self.tabBarController?.tabBar.isHidden = true
         
@@ -41,16 +41,16 @@ extension SeeAllController: UICollectionViewDataSource, UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomePageCell", for: indexPath) as! HomePageCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SeeAllPetsCell", for: indexPath) as! SeeAllPetsCell
         let pet = viewModel.pets[indexPath.item]
-        cell.petName.text = pet.nameEn
+        cell.petNameLabel.text = pet.nameEn
         cell.petImage.loadImage(url: pet.imageOne ?? "")
-        cell.petAdress.text = pet.shelterName
+        cell.shelterNameLabel.text = pet.shelterName
 
         if viewModel.pets[indexPath.item].gender == true {
-            cell.gerderImage.image = UIImage(named: "male")
+            cell.genderImage.image = UIImage(named: "male")
         } else {
-            cell.gerderImage.image = UIImage(named: "female")
+            cell.genderImage.image = UIImage(named: "female")
         }
         return cell
     }
@@ -63,6 +63,6 @@ extension SeeAllController: UICollectionViewDataSource, UICollectionViewDelegate
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-          .init(width: collectionView.frame.width/2-10, height: 315)
+          .init(width: collectionView.frame.width/2-10, height: 260)
       }
 }

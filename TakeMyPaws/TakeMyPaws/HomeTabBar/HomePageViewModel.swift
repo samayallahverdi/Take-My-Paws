@@ -10,6 +10,7 @@ import Foundation
 class HomePageViewModel {
     
     var home = [HomeModel]()
+    var favorites = [FavoritesPetModel]()
     var success: (() -> Void)?
     var error: ((String) -> Void)?
     
@@ -22,6 +23,7 @@ class HomePageViewModel {
                 self.error?(errorMessage)
                 print("error viewModel")
             } else if let data {
+                print(data)
                 self.home.append(contentsOf: data)
                 self.success?()
 //                print(self.home)
@@ -29,14 +31,20 @@ class HomePageViewModel {
             
         }
     }
-//    func search(key: String) {
-//    manager.search(endpoint: .main, key: key) { data, errorMessage in
-//        if let errorMessage {
-//            self.error?(errorMessage)
-//        } else if let data {
-//            self.home = data
-//            self.success?()
+    
+//    func getFavoritesDetails(){
+//        manager.getData(endpoint: .favorites) { data, errorMessage in
+//            if let errorMessage {
+//                self.error?(errorMessage)
+//                print("error viewModel")
+//            } else if let data {
+//                self.favorites.append(contentsOf: data)
+//                self.success?()
+////                print(self.favorites)
+//            }
 //        }
 //    }
-//}
+//    func isFavorite(petId: Int) -> Bool {
+//            return favorites.contains { $0.idNumber == petId }
+//        }
 }
