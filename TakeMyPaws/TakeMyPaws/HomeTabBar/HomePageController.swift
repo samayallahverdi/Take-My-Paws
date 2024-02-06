@@ -65,7 +65,7 @@ extension HomePageController: UICollectionViewDataSource, UICollectionViewDelega
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomePageCell", for: indexPath) as! HomePageCell
         let pet = viewModel.home[indexPath.item]
         
-        cell.viewModel = viewModel
+//        cell.viewModel = viewModel
         cell.petName.text = pet.nameEn
         cell.petImage.loadImage(url: pet.imageOne ?? "")
         cell.petAdress.text = pet.shelterName
@@ -110,7 +110,14 @@ extension HomePageController: HomePageCellDelegate {
         } else {
             postModel.postFavorite(petId: petId, fullName: "samaya")
         }
+//        if petId == index {
+//            postModel.deleteFavorite(petId: petId, fullName: "samaya")
+//
+//        }else {
+//            postModel.postFavorite(petId: petId, fullName: "samaya")
+//        }
     }
+   
     
     
 }
