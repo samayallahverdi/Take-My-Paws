@@ -77,6 +77,7 @@ extension HomePageController: UICollectionViewDataSource, UICollectionViewDelega
             cell.isFavorite = false
         }
         
+        
         if viewModel.home[indexPath.item].gender == true {
             cell.gerderImage.image = UIImage(named: "male")
         } else {
@@ -103,22 +104,15 @@ extension HomePageController: UICollectionViewDataSource, UICollectionViewDelega
 extension HomePageController: HomePageCellDelegate {
     func didTapFavoriteButton(index: Int, isFavorite: Bool) {
         let petId = viewModel.home[index].idNumber ?? 0
-        print("index")
-        
+
+
         if isFavorite {
             postModel.deleteFavorite(petId: petId, fullName: "samaya")
         } else {
             postModel.postFavorite(petId: petId, fullName: "samaya")
+
         }
-//        if petId == index {
-//            postModel.deleteFavorite(petId: petId, fullName: "samaya")
-//
-//        }else {
-//            postModel.postFavorite(petId: petId, fullName: "samaya")
-//        }
+
     }
-   
-    
-    
 }
 

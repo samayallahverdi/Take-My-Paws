@@ -10,7 +10,7 @@ import Foundation
 class HomePageViewModel {
     
     var home = [HomeModel]()
-    var favorites = [FavoritesPetModel]()
+    var isFavoriteStatus = [Bool]()
     var success: (() -> Void)?
     var error: ((String) -> Void)?
     

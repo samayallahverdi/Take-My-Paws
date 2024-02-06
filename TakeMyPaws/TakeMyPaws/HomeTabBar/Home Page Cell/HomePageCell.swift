@@ -21,10 +21,11 @@ class HomePageCell: UICollectionViewCell {
     @IBOutlet weak var favoriteButton: UIButton!
     
     var delegate: HomePageCellDelegate?
-    var viewModel: HomePageViewModel?
+
     
     
     var isFavorite: Bool = true {
+
            didSet {
                updateButtonAppearance()
            }
@@ -35,6 +36,16 @@ class HomePageCell: UICollectionViewCell {
         super.awakeFromNib()
       
     }
+//    func configure(with isFavorite: Bool) {
+//          self.isFavorite = isFavorite
+//          updateButtonAppearance()
+//      }
+      
+      override func prepareForReuse() {
+          super.prepareForReuse()
+          isFavorite = true
+          updateButtonAppearance()
+      }
     
     func updateButtonAppearance() {
            if !isFavorite {
@@ -47,5 +58,6 @@ class HomePageCell: UICollectionViewCell {
        @IBAction func favoriteButtonTapped(_ sender: Any) {
            isFavorite.toggle()
            delegate?.didTapFavoriteButton(index: self.tag, isFavorite: isFavorite)
+          
        }
    }
