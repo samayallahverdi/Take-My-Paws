@@ -7,6 +7,8 @@
 
 import Foundation
 
+    
+
 class PostModel {
     
     func postFavorite(petId: Int, fullName: String) {
@@ -75,6 +77,8 @@ class PostModel {
                 print("Error: \(error)")
             } else if let data = data {
                 print("Response data: \(String(data: data, encoding: .utf8) ?? "")")
+               
+
                 
             }
         }

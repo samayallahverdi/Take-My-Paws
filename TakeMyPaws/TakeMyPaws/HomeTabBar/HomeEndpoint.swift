@@ -9,4 +9,5 @@ import Foundation
 
 enum HomeEndpoint: String {
     case main = "api"
+  
 }

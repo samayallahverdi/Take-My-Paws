@@ -21,20 +21,13 @@ class HomePageController: UIViewController {
         homeCollection.register(UINib(nibName: "HomePageCell", bundle: nil), forCellWithReuseIdentifier: "HomePageCell")
         configureViewModel()
     }
-    
-    
-    
+     
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = false
-        //        viewModel.getHomeDetails()
-        print("Samallamlmslf")
         viewModel.home.removeAll()
         configureViewModel()
         
     }
-    
-  
-    // /favorites/5
     
     
     // MARK: - ViewModelConfiguration
@@ -80,7 +73,7 @@ extension HomePageController: UICollectionViewDataSource, UICollectionViewDelega
         cell.petName.text = pet.nameEn
         cell.petImage.loadImage(url: pet.imageOne ?? "")
         cell.petAdress.text = pet.shelterName
-        print("animal", viewModel.home[indexPath.item].isFavorite ?? true)
+//        print("animal", viewModel.home[indexPath.item].isFavorite ?? true)
         
         
         
@@ -117,14 +110,12 @@ extension HomePageController: HomePageCellDelegate {
     func didTapFavoriteButton(index: Int, isFavorite: Bool) {
         let petId = viewModel.home[index].idNumber ?? 0
 
-
         if isFavorite {
             postModel.deleteFavorite(petId: petId, fullName: "samaya")
         } else {
             postModel.postFavorite(petId: petId, fullName: "samaya")
 
         }
-
     }
 }
 

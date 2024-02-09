@@ -23,7 +23,7 @@ class HomePageViewModel {
                 self.error?(errorMessage)
                 print("error viewModel")
             } else if let data {
-                print(data)
+//                print(data)
                 self.home.append(contentsOf: data)
                 self.success?()
 //                print(self.home)
@@ -32,19 +32,7 @@ class HomePageViewModel {
         }
     }
     
-//    func getFavoritesDetails(){
-//        manager.getData(endpoint: .favorites) { data, errorMessage in
-//            if let errorMessage {
-//                self.error?(errorMessage)
-//                print("error viewModel")
-//            } else if let data {
-//                self.favorites.append(contentsOf: data)
-//                self.success?()
-////                print(self.favorites)
-//            }
-//        }
-//    }
-//    func isFavorite(petId: Int) -> Bool {
-//            return favorites.contains { $0.idNumber == petId }
-//        }
+   
+    
+
 }

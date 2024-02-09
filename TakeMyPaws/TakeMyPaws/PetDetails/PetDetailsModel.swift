@@ -12,6 +12,7 @@ struct PetDetailsModel: Codable {
     let idNumber: Int?
        let shelterAddress, infoLostandfound, shelterAddressEn, shelterAddressRu: String?
        let ageDay: Int?
+        let isFavorite: Bool?
        let nameAz, nameEn, nameRu: String?
        let petType, gender: Bool?
        let birthDate: String?
@@ -33,6 +34,7 @@ struct PetDetailsModel: Codable {
            case shelterAddressEn = "shelter_address_en"
            case shelterAddressRu = "shelter_address_ru"
            case ageDay = "age_day"
+           case isFavorite = "is_favorite"
            case nameAz = "name_az"
            case nameEn = "name_en"
            case nameRu = "name_ru"

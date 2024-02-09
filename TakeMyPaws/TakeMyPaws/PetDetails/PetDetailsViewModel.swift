@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 struct PetDetailModel {
     let type: PetDetailType
 }
@@ -32,6 +33,7 @@ struct PetSpecification {
 
 class PetDetailsViewModel {
     
+    var petName: String?
     var petDetails = [PetDetailModel]()
     var success: (() -> Void)?
     var error: ((String) -> Void)?

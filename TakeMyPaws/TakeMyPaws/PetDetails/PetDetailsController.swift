@@ -15,7 +15,7 @@ class PetDetailsController: UIViewController {
     
     var selectedId = 0
     let viewModel = PetDetailsViewModel()
-   
+    
     
     @IBOutlet weak var detailsCollection: UICollectionView!
     override func viewDidLoad() {
@@ -123,56 +123,59 @@ extension PetDetailsController {
 }
 extension PetDetailsController {
     func showAdoptionAlert() {
-            let alertController = UIAlertController(title: "Adopt a Pet", message: "Please enter your email. We will send you detailed information via email.", preferredStyle: .alert)
-
-            alertController.addTextField { (textField) in
-                textField.placeholder = "Your Email"
-            }
-
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-            alertController.addAction(cancelAction)
-
-            let adoptAction = UIAlertAction(title: "Adopt", style: .default) { [weak self] (_) in
-                guard let self = self, let userEmail = alertController.textFields?.first?.text else { return }
-
-                
-                if self.isValidEmail(email: userEmail) {
-                   
-                    self.saveAdoptionInfoToRealm(userEmail: userEmail)
-                } else {
-                   
-                    self.showErrorMessage(message: "Invalid email format. Please enter a valid email.")
-                }
-            }
-
-            alertController.addAction(adoptAction)
-
-            present(alertController, animated: true, completion: nil)
+        let alertController = UIAlertController(title: "Adopt a Pet", message: "Please enter your email. We will send you detailed information via email.", preferredStyle: .alert)
+        
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Your Email"
         }
-
-        func isValidEmail(email: String) -> Bool {
-           
-            let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-            return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: email)
-        }
-
-        func saveAdoptionInfoToRealm(userEmail: String) {
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        
+        let adoptAction = UIAlertAction(title: "Adopt", style: .default) { [weak self] (_) in
+            guard let self = self, let userEmail = alertController.textFields?.first?.text else { return }
             
-            let adoptedPet = AdoptPets()
-            adoptedPet.petName = "PetName"
-            adoptedPet.userEmail = userEmail
-
-            try? realm.write {
-                realm.add(adoptedPet)
+            
+            if self.isValidEmail(email: userEmail) {
+                
+                self.saveAdoptionInfoToRealm(userEmail: userEmail)
+            } else {
+                
+                self.showErrorMessage(message: "Invalid email format. Please enter a valid email.")
             }
-
-            print("Adoption info saved to Realm: \(adoptedPet)")
         }
-
-        func showErrorMessage(message: String) {
-            let errorAlert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            errorAlert.addAction(okAction)
-            present(errorAlert, animated: true, completion: nil)
+        
+        alertController.addAction(adoptAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func isValidEmail(email: String) -> Bool {
+        
+        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: email)
+    }
+    
+    func saveAdoptionInfoToRealm(userEmail: String) {
+        
+        let adoptedPet = AdoptPets()
+        adoptedPet.petName = "PetName"
+        adoptedPet.userEmail = userEmail
+        
+        try? realm.write {
+            realm.add(adoptedPet)
         }
+        
+        print("Adoption info saved to Realm: \(adoptedPet)")
+    }
+    
+    func showErrorMessage(message: String) {
+        let errorAlert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        errorAlert.addAction(okAction)
+        present(errorAlert, animated: true, completion: nil)
+    }
+    
+    
+    
 }
