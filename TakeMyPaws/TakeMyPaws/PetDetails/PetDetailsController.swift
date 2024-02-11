@@ -65,8 +65,6 @@ extension PetDetailsController: UICollectionViewDataSource, UICollectionViewDele
         case .info(let info):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PetDetailsCell", for: indexPath) as! PetDetailsCell
             cell.configure(withInfo: info)
-            //            cell.petEnergy
-            //            cell.petSize.text = info.size
             return cell
         case .name(let name):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PetNameCell", for: indexPath) as! PetNameCell
@@ -121,34 +119,54 @@ extension PetDetailsController {
         
     }
 }
+
+// MARK: - PostPetDetails
+
 extension PetDetailsController {
-    func showAdoptionAlert() {
-        let alertController = UIAlertController(title: "Adopt a Pet", message: "Please enter your email. We will send you detailed information via email.", preferredStyle: .alert)
-        
-        alertController.addTextField { (textField) in
-            textField.placeholder = "Your Email"
-        }
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        alertController.addAction(cancelAction)
-        
-        let adoptAction = UIAlertAction(title: "Adopt", style: .default) { [weak self] (_) in
-            guard let self = self, let userEmail = alertController.textFields?.first?.text else { return }
+    
+    func postAdoptionRequest(name: String, email: String, phoneNumber: String, comments: String?) {
+       
+        if let url = URL(string: "https://takemypaws.com/en/api/adopt") {
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+           
+            let parameters: [String: Any] = ["petId": selectedId,
+                                             "name": name,
+                                             "email": email,
+                                             "phoneNumber": phoneNumber,
+                                             "comment": comments ?? ""]
             
             
-            if self.isValidEmail(email: userEmail) {
-                
-                self.saveAdoptionInfoToRealm(userEmail: userEmail)
-            } else {
-                
-                self.showErrorMessage(message: "Invalid email format. Please enter a valid email.")
+            
+            do {
+                let jsonData = try JSONSerialization.data(withJSONObject: parameters)
+                request.httpBody = jsonData
+            } catch {
+                print("Error converting parameters to JSON: \(error)")
+                return
             }
+            
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                
+                if let error = error {
+                    print("Error: \(error)")
+                } else if let data = data {
+                    print("Response data: \(String(data: data, encoding: .utf8) ?? "")")
+                    
+                }
+            }
+            
+            task.resume()
         }
         
-        alertController.addAction(adoptAction)
-        
-        present(alertController, animated: true, completion: nil)
     }
+    
+}
+
+// MARK: - AlertConfiguration
+
+extension PetDetailsController {
     
     func isValidEmail(email: String) -> Bool {
         
@@ -156,24 +174,61 @@ extension PetDetailsController {
         return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: email)
     }
     
-    func saveAdoptionInfoToRealm(userEmail: String) {
-        
-        let adoptedPet = AdoptPets()
-        adoptedPet.petName = "PetName"
-        adoptedPet.userEmail = userEmail
-        
-        try? realm.write {
-            realm.add(adoptedPet)
-        }
-        
-        print("Adoption info saved to Realm: \(adoptedPet)")
-    }
-    
-    func showErrorMessage(message: String) {
+    func showErrorManager(message: String) {
         let errorAlert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         errorAlert.addAction(okAction)
         present(errorAlert, animated: true, completion: nil)
+    }
+    
+    
+    func showAdoptionAlert() {
+        
+        let alertController = UIAlertController(title: "Adopt a Pet", message: "Please provide the following information:", preferredStyle: .alert)
+        
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Your Name"
+        }
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Your Email"
+            textField.keyboardType = .emailAddress
+        }
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Your Phone Number"
+            textField.keyboardType = .phonePad
+        }
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Comments (Optional)"
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        
+        let adoptAction = UIAlertAction(title: "Adopt", style: .default) { [weak self] (_) in
+            guard let self = self,
+                  let name = alertController.textFields?[0].text,
+                  let email = alertController.textFields?[1].text,
+                  let phoneNumber = alertController.textFields?[2].text else {
+                return
+            }
+            
+            if name.isEmpty || email.isEmpty || phoneNumber.isEmpty {
+                self.showErrorManager(message: "Please fill in all required fields.")
+                return
+            }
+            
+            if !self.isValidEmail(email: email) {
+                self.showErrorManager(message: "Invalid email format. Please enter a valid email.")
+                return
+            }
+            
+           
+            self.postAdoptionRequest(name: name, email: email, phoneNumber: phoneNumber, comments: alertController.textFields?[3].text)
+        }
+        
+        alertController.addAction(adoptAction)
+        
+        present(alertController, animated: true, completion: nil)
     }
     
     

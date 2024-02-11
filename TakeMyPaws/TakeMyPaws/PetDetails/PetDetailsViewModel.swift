@@ -63,7 +63,8 @@ class PetDetailsViewModel {
                     self.petDetails.append(PetDetailModel(type: descriptionType))
                 }
                 
-                self.success?()
+                    self.success?()
+                
             }
         }
     }
