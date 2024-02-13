@@ -102,7 +102,7 @@ extension PetDetailsController: UICollectionViewDataSource, UICollectionViewDele
         case .specification:
             return CGSize(width: collectionView.frame.width - 30, height: 85)
         case .description:
-            return CGSize(width: collectionView.frame.width - 45, height: 232)
+            return CGSize(width: collectionView.frame.width - 45, height: 230)
         }
     }
 }

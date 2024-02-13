@@ -38,6 +38,18 @@ class NewsPageHeader: UICollectionReusableView {
     }
     
     @IBAction func RecomendationViewAllBUttonTapped(_ sender: Any) {
+        
+        guard let newsDetailsController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainNewsViewAllController") as? MainNewsViewAllController else {
+            return
+        }
+
+        if let navigationController = self.window?.rootViewController as? UINavigationController {
+            navigationController.show(newsDetailsController, sender: nil)
+        } else {
+            // If the root view controller is not a navigation controller, present the controller modally
+            self.window?.rootViewController?.show(newsDetailsController, sender: nil)
+        }
+
     }
 }
 // MARK: - UIConfiguration

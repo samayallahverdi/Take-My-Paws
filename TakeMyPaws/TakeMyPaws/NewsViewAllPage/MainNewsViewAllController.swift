@@ -1,13 +1,13 @@
 //
-//  NewsController.swift
+//  MainNewsViewAllController.swift
 //  TakeMyPaws
 //
-//  Created by BUDLCIT on 2024. 02. 08..
+//  Created by BUDLCIT on 2024. 02. 12..
 //
 
 import UIKit
 
-class NewsController: UIViewController {
+class MainNewsViewAllController: UIViewController {
 
     @IBOutlet weak var mainNewsCollection: UICollectionView!
     
@@ -15,16 +15,16 @@ class NewsController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         configureViewModel()
         cellRegister()
     }
     
-    // MARK: - ViewModelConfiguration
     
     func configureViewModel() {
         
         viewModel.getMainNewsDetails()
-//        viewModel.getLatestNewsDetails()
+        
         viewModel.error = { errorMessage in
             print("Error: \(errorMessage)")
         }
@@ -33,14 +33,14 @@ class NewsController: UIViewController {
             self.mainNewsCollection.reloadData()
         }
     }
-    @IBAction func latestNewsViewButtonTapped(_ sender: Any) {
-        let controller = storyboard?.instantiateViewController(withIdentifier: "LatestNewsViewAllController") as! LatestNewsViewAllController
-        navigationController?.show(controller, sender: nil)
-    }
+    
     
 }
+
 // MARK: - UIConfiguration
-extension NewsController: UICollectionViewDataSource, UICollectionViewDelegate {
+
+extension MainNewsViewAllController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         viewModel.mainNews.count
     }
@@ -48,27 +48,21 @@ extension NewsController: UICollectionViewDataSource, UICollectionViewDelegate {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainNewsCell", for: indexPath) as! MainNewsCell
         let news = viewModel.mainNews[indexPath.item]
         cell.newsImage.loadImage(url: news.image ?? "")
-        cell.newsSource.text = "Published by: \(news.publisherName ?? "")"
+        cell.newsSource.text = news.publisherName
         cell.newsTitle.text = news.newsEn
+        
         return cell
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "NewsDetailsController") as! NewsDetailsController
         controller.selectedNews = viewModel.mainNews[indexPath.item]
         navigationController?.present(controller, animated: true)
     }
 }
-extension NewsController {
+
+extension MainNewsViewAllController {
     func cellRegister() {
         mainNewsCollection.register(UINib(nibName: "MainNewsCell", bundle: nil), forCellWithReuseIdentifier: "MainNewsCell")
-        mainNewsCollection.register(UINib(nibName: "\(LatestNewsCell.self)", bundle: nil),
-                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                                withReuseIdentifier: "\(LatestNewsCell.self)")
-    }
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "NewsPageHeader", for: indexPath) as! NewsPageHeader
-      
-        return headerView
     }
 }

@@ -17,10 +17,11 @@ class NewsDetailsController: UIViewController {
     
     
     var selectedNews: NewsModel?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-      configureUI()
+        
+        configureUI()
     }
     
     func configureUI() {
@@ -31,5 +32,5 @@ class NewsDetailsController: UIViewController {
         newsDescription.text = selectedNews?.descriptionEn
         
     }
-
+    
 }
