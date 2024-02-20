@@ -550,75 +550,6 @@
             </objects>
             <point key="canvasLocation" x="1700" y="925"/>
         </scene>
-        <!--Greeting Controller-->
-        <scene sceneID="Lr9-L6-wOR">
-            <objects>
-                <viewController storyboardIdentifier="GreetingController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lD3-kc-vxQ" customClass="GreetingController" customModule="TakeMyPaws" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="dFg-RR-ePB">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Greeting" translatesAutoresizingMaskIntoConstraints="NO" id="sXE-Gi-hFg">
-                                <rect key="frame" x="21" y="141" width="351" height="507"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="351" id="CUY-cn-8fi"/>
-                                    <constraint firstAttribute="height" constant="507" id="sRT-gl-sLh"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find your new friends" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJd-TB-axa">
-                                <rect key="frame" x="53" y="589" width="287" height="28"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
-                                <color key="textColor" red="0.37254901960784315" green="0.35686274509803922" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make your life more happy with us to have a little new friends" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kv1-FW-DKl">
-                                <rect key="frame" x="43" y="633" width="307" height="33.666666666666629"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.67843137254901964" green="0.6588235294117647" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="awG-51-1hy">
-                                <rect key="frame" x="90" y="711.66666666666663" width="213" height="52"/>
-                                <color key="backgroundColor" red="0.50980392156862742" green="0.45098039215686275" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="3zd-sr-d2w"/>
-                                </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Get Started"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="8"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="getStartedButtonTapped:" destination="lD3-kc-vxQ" eventType="touchUpInside" id="gAH-Wp-fQO"/>
-                                    <action selector="starrButtonTapped:" destination="lD3-kc-vxQ" eventType="touchUpInside" id="9PQ-bK-anj"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="9cH-VP-3C9"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Kv1-FW-DKl" firstAttribute="top" secondItem="iJd-TB-axa" secondAttribute="bottom" constant="16" id="0d2-X2-Giy"/>
-                            <constraint firstItem="Kv1-FW-DKl" firstAttribute="leading" secondItem="9cH-VP-3C9" secondAttribute="leading" constant="43" id="2oe-PG-boS"/>
-                            <constraint firstItem="iJd-TB-axa" firstAttribute="top" secondItem="dFg-RR-ePB" secondAttribute="topMargin" constant="486" id="CwI-pQ-KIQ"/>
-                            <constraint firstItem="awG-51-1hy" firstAttribute="top" secondItem="Kv1-FW-DKl" secondAttribute="bottom" constant="45" id="Mdi-Up-VNx"/>
-                            <constraint firstItem="9cH-VP-3C9" firstAttribute="trailing" secondItem="Kv1-FW-DKl" secondAttribute="trailing" constant="43" id="Nab-Xj-W8P"/>
-                            <constraint firstItem="sXE-Gi-hFg" firstAttribute="top" secondItem="9cH-VP-3C9" secondAttribute="top" constant="38" id="ZSP-qv-vrY"/>
-                            <constraint firstItem="sXE-Gi-hFg" firstAttribute="centerX" secondItem="9cH-VP-3C9" secondAttribute="centerX" id="bBX-Ya-fF7"/>
-                            <constraint firstItem="iJd-TB-axa" firstAttribute="leading" secondItem="9cH-VP-3C9" secondAttribute="leading" constant="53" id="f8w-L2-vnS"/>
-                            <constraint firstItem="9cH-VP-3C9" firstAttribute="trailing" secondItem="awG-51-1hy" secondAttribute="trailing" constant="90" id="kyk-th-aSB"/>
-                            <constraint firstItem="awG-51-1hy" firstAttribute="leading" secondItem="9cH-VP-3C9" secondAttribute="leading" constant="90" id="qG8-HB-8wL"/>
-                            <constraint firstItem="9cH-VP-3C9" firstAttribute="trailing" secondItem="iJd-TB-axa" secondAttribute="trailing" constant="53" id="ryy-ZD-oBe"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="LKD-mY-RL7"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dAL-06-rxf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1571.7557251908397" y="-201.40845070422537"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Wux-pn-540">
             <objects>
@@ -757,27 +688,8 @@
             </objects>
             <point key="canvasLocation" x="773" y="925"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ZYE-0j-DJ8">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nkq-jt-lCf" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wdE-9w-P1w">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="lD3-kc-vxQ" kind="relationship" relationship="rootViewController" id="Uuf-oU-I3T"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Zy2-DD-Qdt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2498.4732824427479" y="-201.40845070422537"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="Greeting" width="375" height="490"/>
         <image name="heart" width="26" height="26"/>
         <image name="homee" width="24" height="24"/>
         <image name="newspaper" catalog="system" width="128" height="111"/>
