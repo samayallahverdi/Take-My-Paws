@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SheltersCell" customModule="TakeMyPaws" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="345" height="400"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="345" height="400"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dogHouse" translatesAutoresizingMaskIntoConstraints="NO" id="xo3-dw-ZOv">
+                        <rect key="frame" x="0.0" y="0.0" width="345" height="210"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="210" id="4TQ-Aa-PNJ"/>
+                            <constraint firstAttribute="width" constant="345" id="NvV-Ii-4Dh"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <integer key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dog House" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJf-Tv-fKF">
+                        <rect key="frame" x="14" y="216" width="330" height="21"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="QLi-he-Y5G">
+                        <rect key="frame" x="5" y="242" width="20" height="21"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSe-Xu-IXb">
+                        <rect key="frame" x="28" y="242" width="306" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="bYn-QO-wjJ"/>
+                            <constraint firstAttribute="width" constant="306" id="xIp-3J-fbQ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgC-My-uo7">
+                        <rect key="frame" x="14" y="274" width="97" height="22"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NdZ-kM-lzT">
+                        <rect key="frame" x="9" y="298" width="327" height="128"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="128" id="cNi-lU-Fv1"/>
+                        </constraints>
+                        <string key="text">Baku Animal Rescue Society is committed to the welfare of animals in the Baku region. This shelter strives to rescue, nurture, and advocate for animals facing adversity. Through community engagement and educational initiatives, Baku Animal Rescue Society aims to create a more compassionate society for both people and animals.</string>
+                        <color key="textColor" systemColor="labelColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" systemColor="systemGray6Color"/>
+            <constraints>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="NdZ-kM-lzT" secondAttribute="trailing" constant="9" id="6MF-LR-rYm"/>
+                <constraint firstItem="AJf-Tv-fKF" firstAttribute="top" secondItem="xo3-dw-ZOv" secondAttribute="bottom" constant="6" id="BsK-po-7ZW"/>
+                <constraint firstItem="QLi-he-Y5G" firstAttribute="top" secondItem="AJf-Tv-fKF" secondAttribute="bottom" constant="5" id="Dc1-EG-ISA"/>
+                <constraint firstItem="NdZ-kM-lzT" firstAttribute="top" secondItem="fgC-My-uo7" secondAttribute="bottom" constant="2" id="I6N-pG-upZ"/>
+                <constraint firstItem="QLi-he-Y5G" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="5" id="JAO-F3-S2Q"/>
+                <constraint firstItem="YSe-Xu-IXb" firstAttribute="top" secondItem="AJf-Tv-fKF" secondAttribute="bottom" constant="5" id="Ks4-wz-pVc"/>
+                <constraint firstItem="xo3-dw-ZOv" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="PTV-8p-HLY"/>
+                <constraint firstItem="xo3-dw-ZOv" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Pn5-1H-Y92"/>
+                <constraint firstItem="AJf-Tv-fKF" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.956522" id="T0l-Rq-KAL"/>
+                <constraint firstItem="AJf-Tv-fKF" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="14" id="WpV-Qe-w6X"/>
+                <constraint firstItem="NdZ-kM-lzT" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="9" id="XmJ-27-pOZ"/>
+                <constraint firstItem="fgC-My-uo7" firstAttribute="top" secondItem="YSe-Xu-IXb" secondAttribute="bottom" constant="8" symbolic="YES" id="ZxP-de-MmA"/>
+                <constraint firstItem="YSe-Xu-IXb" firstAttribute="leading" secondItem="QLi-he-Y5G" secondAttribute="trailing" constant="3" id="l7S-CT-S4z"/>
+                <constraint firstAttribute="trailing" secondItem="xo3-dw-ZOv" secondAttribute="trailing" id="qF9-tO-3py"/>
+                <constraint firstItem="fgC-My-uo7" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="14" id="s1c-Pv-6af"/>
+            </constraints>
+            <size key="customSize" width="345" height="398"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <integer key="value" value="8"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="shelterAdressLabel" destination="YSe-Xu-IXb" id="p1X-fn-8Ha"/>
+                <outlet property="shelterDescription" destination="NdZ-kM-lzT" id="v0S-vN-j96"/>
+                <outlet property="shelterImage" destination="xo3-dw-ZOv" id="wm9-1O-yXc"/>
+                <outlet property="shelterName" destination="AJf-Tv-fKF" id="w3b-RF-ABA"/>
+            </connections>
+            <point key="canvasLocation" x="48.091603053435115" y="34.507042253521128"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="dogHouse" width="581" height="487"/>
+        <image name="location" width="20" height="21"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

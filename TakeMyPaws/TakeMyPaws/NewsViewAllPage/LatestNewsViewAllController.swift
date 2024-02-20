@@ -30,7 +30,7 @@ class LatestNewsViewAllController: UIViewController {
         }
         viewModel.success = {
             
-                        self.latestNewsCollection.reloadData()
+            self.latestNewsCollection.reloadData()
         }
     }
     

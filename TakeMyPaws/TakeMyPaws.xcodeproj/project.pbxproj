@@ -53,6 +53,17 @@
 		254E35112B7654D900DCF211 /* NewsDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E35102B7654D900DCF211 /* NewsDetailsController.swift */; };
 		254E35292B7A491300DCF211 /* LatestNewsViewAllController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E35282B7A491300DCF211 /* LatestNewsViewAllController.swift */; };
 		254E352B2B7A498D00DCF211 /* MainNewsViewAllController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E352A2B7A498D00DCF211 /* MainNewsViewAllController.swift */; };
+		254E352D2B7CC5AE00DCF211 /* ShelterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E352C2B7CC5AE00DCF211 /* ShelterController.swift */; };
+		254E35302B7CC77D00DCF211 /* SheltersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E352F2B7CC77D00DCF211 /* SheltersManager.swift */; };
+		254E35322B7CC78800DCF211 /* SheltersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E35312B7CC78800DCF211 /* SheltersViewModel.swift */; };
+		254E35342B7CC79900DCF211 /* SheltersEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E35332B7CC79900DCF211 /* SheltersEndpoint.swift */; };
+		254E35362B7CC7AA00DCF211 /* SheltersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E35352B7CC7AA00DCF211 /* SheltersModel.swift */; };
+		254E35392B7CD05E00DCF211 /* SheltersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E35372B7CD05E00DCF211 /* SheltersCell.swift */; };
+		254E353A2B7CD05E00DCF211 /* SheltersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 254E35382B7CD05E00DCF211 /* SheltersCell.xib */; };
+		254E353D2B84B2AC00DCF211 /* GreetingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E353C2B84B2AC00DCF211 /* GreetingController.swift */; };
+		254E35402B84C31700DCF211 /* SearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E353F2B84C31700DCF211 /* SearchManager.swift */; };
+		254E35422B84C34E00DCF211 /* SearchEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E35412B84C34E00DCF211 /* SearchEndpoint.swift */; };
+		254E35442B84C3CD00DCF211 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E35432B84C3CD00DCF211 /* SearchViewModel.swift */; };
 		25F343A72B4C25BE0083742C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F343A62B4C25BE0083742C /* AppDelegate.swift */; };
 		25F343A92B4C25BE0083742C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F343A82B4C25BE0083742C /* SceneDelegate.swift */; };
 		25F343AE2B4C25BE0083742C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25F343AC2B4C25BE0083742C /* Main.storyboard */; };
@@ -68,7 +79,6 @@
 		25F343CD2B4D6D880083742C /* HomePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F343CC2B4D6D880083742C /* HomePageViewModel.swift */; };
 		25F343CF2B4D6E140083742C /* HomeEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F343CE2B4D6E140083742C /* HomeEndpoint.swift */; };
 		25F343D22B4D72DD0083742C /* HomePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F343D12B4D72DD0083742C /* HomePageController.swift */; };
-		25F343D42B4ECDBE0083742C /* GreetingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F343D32B4ECDBE0083742C /* GreetingController.swift */; };
 		25F343D82B4ED6530083742C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F343D72B4ED6530083742C /* TabBarController.swift */; };
 		25F343E02B4EEBAD0083742C /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 25F343DB2B4EEBAD0083742C /* Poppins-SemiBold.ttf */; };
 		25F343E12B4EEBAD0083742C /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 25F343DC2B4EEBAD0083742C /* Poppins-Medium.ttf */; };
@@ -128,6 +138,17 @@
 		254E35102B7654D900DCF211 /* NewsDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsController.swift; sourceTree = "<group>"; };
 		254E35282B7A491300DCF211 /* LatestNewsViewAllController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestNewsViewAllController.swift; sourceTree = "<group>"; };
 		254E352A2B7A498D00DCF211 /* MainNewsViewAllController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNewsViewAllController.swift; sourceTree = "<group>"; };
+		254E352C2B7CC5AE00DCF211 /* ShelterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterController.swift; sourceTree = "<group>"; };
+		254E352F2B7CC77D00DCF211 /* SheltersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheltersManager.swift; sourceTree = "<group>"; };
+		254E35312B7CC78800DCF211 /* SheltersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheltersViewModel.swift; sourceTree = "<group>"; };
+		254E35332B7CC79900DCF211 /* SheltersEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheltersEndpoint.swift; sourceTree = "<group>"; };
+		254E35352B7CC7AA00DCF211 /* SheltersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheltersModel.swift; sourceTree = "<group>"; };
+		254E35372B7CD05E00DCF211 /* SheltersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheltersCell.swift; sourceTree = "<group>"; };
+		254E35382B7CD05E00DCF211 /* SheltersCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SheltersCell.xib; sourceTree = "<group>"; };
+		254E353C2B84B2AC00DCF211 /* GreetingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingController.swift; sourceTree = "<group>"; };
+		254E353F2B84C31700DCF211 /* SearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchManager.swift; sourceTree = "<group>"; };
+		254E35412B84C34E00DCF211 /* SearchEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEndpoint.swift; sourceTree = "<group>"; };
+		254E35432B84C3CD00DCF211 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		25F343A32B4C25BE0083742C /* TakeMyPaws.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakeMyPaws.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25F343A62B4C25BE0083742C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25F343A82B4C25BE0083742C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,7 +164,6 @@
 		25F343CC2B4D6D880083742C /* HomePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewModel.swift; sourceTree = "<group>"; };
 		25F343CE2B4D6E140083742C /* HomeEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEndpoint.swift; sourceTree = "<group>"; };
 		25F343D12B4D72DD0083742C /* HomePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageController.swift; sourceTree = "<group>"; };
-		25F343D32B4ECDBE0083742C /* GreetingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingController.swift; sourceTree = "<group>"; };
 		25F343D72B4ED6530083742C /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		25F343DB2B4EEBAD0083742C /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		25F343DC2B4EEBAD0083742C /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
@@ -354,6 +374,38 @@
 			path = NewsViewAllPage;
 			sourceTree = "<group>";
 		};
+		254E352E2B7CC5B200DCF211 /* SheltersTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				254E35352B7CC7AA00DCF211 /* SheltersModel.swift */,
+				254E35332B7CC79900DCF211 /* SheltersEndpoint.swift */,
+				254E352F2B7CC77D00DCF211 /* SheltersManager.swift */,
+				254E35312B7CC78800DCF211 /* SheltersViewModel.swift */,
+				254E352C2B7CC5AE00DCF211 /* ShelterController.swift */,
+				254E353B2B7CD06400DCF211 /* Shelters Cell */,
+			);
+			path = SheltersTabBar;
+			sourceTree = "<group>";
+		};
+		254E353B2B7CD06400DCF211 /* Shelters Cell */ = {
+			isa = PBXGroup;
+			children = (
+				254E35372B7CD05E00DCF211 /* SheltersCell.swift */,
+				254E35382B7CD05E00DCF211 /* SheltersCell.xib */,
+			);
+			path = "Shelters Cell";
+			sourceTree = "<group>";
+		};
+		254E353E2B84C2D900DCF211 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				254E353F2B84C31700DCF211 /* SearchManager.swift */,
+				254E35412B84C34E00DCF211 /* SearchEndpoint.swift */,
+				254E35432B84C3CD00DCF211 /* SearchViewModel.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		25F3439A2B4C25BE0083742C = {
 			isa = PBXGroup;
 			children = (
@@ -379,7 +431,7 @@
 				25F343AF2B4C25C00083742C /* Assets.xcassets */,
 				25F343B12B4C25C00083742C /* LaunchScreen.storyboard */,
 				25F343B42B4C25C00083742C /* Info.plist */,
-				25F343D32B4ECDBE0083742C /* GreetingController.swift */,
+				254E353C2B84B2AC00DCF211 /* GreetingController.swift */,
 				25F343C42B4D6B6A0083742C /* Core */,
 				25294E932B691363007A668F /* DataManager */,
 				25294E802B67C181007A668F /* UseCase */,
@@ -387,11 +439,13 @@
 				25F343C52B4D6B9B0083742C /* Extension */,
 				25F343E52B5001750083742C /* TabBar */,
 				25F343D02B4D6E7E0083742C /* HomeTabBar */,
+				254E353E2B84C2D900DCF211 /* Search */,
 				25294E852B67D6AF007A668F /* PetDetails */,
 				25294EB82B6FF3D2007A668F /* FavoriteTabBar */,
 				254E34EF2B75106600DCF211 /* NewsTabBar */,
 				254E35122B7654EE00DCF211 /* NewsDetails */,
 				254E35202B7A470600DCF211 /* NewsViewAllPage */,
+				254E352E2B7CC5B200DCF211 /* SheltersTabBar */,
 			);
 			path = TakeMyPaws;
 			sourceTree = "<group>";
@@ -555,6 +609,7 @@
 				25F343B32B4C25C00083742C /* LaunchScreen.storyboard in Resources */,
 				25F343E02B4EEBAD0083742C /* Poppins-SemiBold.ttf in Resources */,
 				254E35062B751A6B00DCF211 /* MainNewsCell.xib in Resources */,
+				254E353A2B7CD05E00DCF211 /* SheltersCell.xib in Resources */,
 				254E34EC2B75102400DCF211 /* NewsPageHeader.xib in Resources */,
 				25294EB12B6D6547007A668F /* PetSpecificationCell.xib in Resources */,
 				254E350A2B751A8100DCF211 /* LatestNewsCell.xib in Resources */,
@@ -588,21 +643,28 @@
 				254E35092B751A8100DCF211 /* LatestNewsCell.swift in Sources */,
 				25294E9C2B6ADA0A007A668F /* PetImageCell.swift in Sources */,
 				25294E8B2B67D735007A668F /* PetDetailsViewModel.swift in Sources */,
+				254E35342B7CC79900DCF211 /* SheltersEndpoint.swift in Sources */,
 				25F343F22B51539D0083742C /* HomePageCell.swift in Sources */,
 				25294E872B67D6CE007A668F /* PetDetailsController.swift in Sources */,
+				254E35362B7CC7AA00DCF211 /* SheltersModel.swift in Sources */,
 				254E34F52B7510F700DCF211 /* NewsViewModel.swift in Sources */,
 				25294E7F2B67C140007A668F /* SeeAllPageManager.swift in Sources */,
+				254E35422B84C34E00DCF211 /* SearchEndpoint.swift in Sources */,
+				254E353D2B84B2AC00DCF211 /* GreetingController.swift in Sources */,
 				254E34EE2B75106100DCF211 /* NewsController.swift in Sources */,
 				25F343BB2B4C3B070083742C /* NetworkHelper.swift in Sources */,
 				254E34F12B75109500DCF211 /* NewsModel.swift in Sources */,
 				254E35112B7654D900DCF211 /* NewsDetailsController.swift in Sources */,
 				25294EBC2B6FF440007A668F /* FavoriteModel.swift in Sources */,
+				254E35402B84C31700DCF211 /* SearchManager.swift in Sources */,
 				25294EB02B6D6547007A668F /* PetSpecificationCell.swift in Sources */,
 				25294EC42B6FF76C007A668F /* FavoritesController.swift in Sources */,
 				254E34F92B75134500DCF211 /* NewsUseCase.swift in Sources */,
 				254E35292B7A491300DCF211 /* LatestNewsViewAllController.swift in Sources */,
 				25F343ED2B5024860083742C /* PetDetailsAboutCell.swift in Sources */,
+				254E352D2B7CC5AE00DCF211 /* ShelterController.swift in Sources */,
 				25294EA12B6BEED7007A668F /* PetNameCell.swift in Sources */,
+				254E35322B7CC78800DCF211 /* SheltersViewModel.swift in Sources */,
 				25294EC02B6FF45E007A668F /* FavoriteViewModel.swift in Sources */,
 				25294E842B67C20E007A668F /* SeeAllPageViewModel.swift in Sources */,
 				254E34F72B75126900DCF211 /* NewsEndpoint.swift in Sources */,
@@ -614,6 +676,7 @@
 				25294E992B6ACC4E007A668F /* PetDetailsModel.swift in Sources */,
 				25F343E82B501E630083742C /* PetDetailsCell.swift in Sources */,
 				25294E952B6913A0007A668F /* Model.swift in Sources */,
+				254E35302B7CC77D00DCF211 /* SheltersManager.swift in Sources */,
 				25F343A72B4C25BE0083742C /* AppDelegate.swift in Sources */,
 				254E34EB2B75102400DCF211 /* NewsPageHeader.swift in Sources */,
 				25294EBE2B6FF44C007A668F /* FavoriteManager.swift in Sources */,
@@ -624,7 +687,7 @@
 				25F343D82B4ED6530083742C /* TabBarController.swift in Sources */,
 				25294EC22B6FF63C007A668F /* FavoritesEndpoint.swift in Sources */,
 				254E35052B751A6B00DCF211 /* MainNewsCell.swift in Sources */,
-				25F343D42B4ECDBE0083742C /* GreetingController.swift in Sources */,
+				254E35392B7CD05E00DCF211 /* SheltersCell.swift in Sources */,
 				25294E8D2B691145007A668F /* DataBase.swift in Sources */,
 				254E34E12B7289FB00DCF211 /* PostModel.swift in Sources */,
 				25F343A92B4C25BE0083742C /* SceneDelegate.swift in Sources */,
@@ -632,6 +695,7 @@
 				25294E7C2B67BA4A007A668F /* SeeAllController.swift in Sources */,
 				254E34F32B7510A500DCF211 /* NewsManager.swift in Sources */,
 				25294EAB2B6D650A007A668F /* AdressCell.swift in Sources */,
+				254E35442B84C3CD00DCF211 /* SearchViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

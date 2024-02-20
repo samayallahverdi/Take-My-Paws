@@ -9,12 +9,13 @@ import UIKit
 
 class HomePageController: UIViewController {
     
+    @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var homeCollection: UICollectionView!
     
     let viewModel = HomePageViewModel()
     let postModel = PostModel()
+    let searchViewModel = SearchViewModel()
     
-   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +48,18 @@ class HomePageController: UIViewController {
     
     @IBAction func searchTextField(_ sender: UITextField) {
         
+        if let text = sender.text, !text.isEmpty {
+               searchViewModel.search(key: text)
+               viewModel.home = searchViewModel.searchPets
+           } else {
+             
+               viewModel.home = []
+               viewModel.getHomeDetails()
+           }
+           
+           homeCollection.reloadData()
     }
+    
     
     // MARK: - SeeAllButton
     
@@ -63,17 +75,17 @@ extension HomePageController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         viewModel.home.count
+
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomePageCell", for: indexPath) as! HomePageCell
         let pet = viewModel.home[indexPath.item]
-        
-//        cell.viewModel = viewModel
+
         cell.petName.text = pet.nameEn
         cell.petImage.loadImage(url: pet.imageOne ?? "")
         cell.petAdress.text = pet.shelterName
-//        print("animal", viewModel.home[indexPath.item].isFavorite ?? true)
+
         
         
         

@@ -24,7 +24,7 @@ class NewsController: UIViewController {
     func configureViewModel() {
         
         viewModel.getMainNewsDetails()
-//        viewModel.getLatestNewsDetails()
+
         viewModel.error = { errorMessage in
             print("Error: \(errorMessage)")
         }

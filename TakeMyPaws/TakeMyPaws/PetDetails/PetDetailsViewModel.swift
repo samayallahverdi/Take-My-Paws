@@ -23,7 +23,7 @@ enum PetDetailType {
 
 struct PetInfo {
     let gender: Bool?
-    let energy: Int?
+    let age: Int?
     let size: [String]?
 }
 struct PetSpecification {
@@ -49,7 +49,7 @@ class PetDetailsViewModel {
                 
                 for petDetail in data {
                     let imageType = PetDetailType.image(petDetail.imageOne)
-                    let infoType = PetDetailType.info(PetInfo(gender: petDetail.gender, energy: petDetail.energyLevel, size: petDetail.size))
+                    let infoType = PetDetailType.info(PetInfo(gender: petDetail.gender, age: petDetail.ageYear, size: petDetail.size))
                     let nameType = PetDetailType.name(petDetail.nameEn)
                     let adressType = PetDetailType.adress(petDetail.shelterAddressEn)
                     let specifictionType = PetDetailType.specification(PetSpecification(trained: petDetail.houseTrained, friendly: petDetail.petFriendly))

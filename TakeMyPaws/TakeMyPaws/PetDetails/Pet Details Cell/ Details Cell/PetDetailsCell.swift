@@ -26,10 +26,10 @@ class PetDetailsCell: UICollectionViewCell {
             petGender.text = ""
         }
         
-        if let energyLevel = info.energy {
-            petEnergy.text = "\(energyLevel)/5"
+        if let age = info.age {
+            petEnergy.text = "\(age)"
         } else {
-            petEnergy.text = "Energy: N/A"
+            petEnergy.text = "Age: N/A"
         }
         
         if let sizes = info.size, !sizes.isEmpty {

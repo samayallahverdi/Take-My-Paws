@@ -22,10 +22,9 @@ class FavoritesViewModel {
                 self.error?(errorMessage)
                 print("error viewModel")
             } else if let data {
-//                self.favorites.append(contentsOf: data)
                 self.favorites = data
                 self.success?()
-//                print(self.favorites)
+
             }
         }
     }

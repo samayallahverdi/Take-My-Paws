@@ -24,10 +24,9 @@ class NewsViewModel {
                 self.error?(errorMessage)
                 print("error viewModel")
             } else if let data {
-                print(data)
                 self.latestNews.append(contentsOf: data)
                 self.success?()
-//                print(self.latestNews)
+
             }
             
         }
@@ -39,10 +38,9 @@ class NewsViewModel {
                 self.error?(errorMessage)
                 print("error viewModel")
             } else if let data {
-//                print(data)
                 self.mainNews.append(contentsOf: data)
                 self.success?()
-//                print(self.mainNews)
+
             }
             
         }

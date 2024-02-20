@@ -77,4 +77,9 @@ extension FavoritesController: UICollectionViewDataSource, UICollectionViewDeleg
         }
         return cell
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let controller = storyboard?.instantiateViewController(withIdentifier: "PetDetailsController") as! PetDetailsController
+        controller.selectedId = viewModel.favorites[indexPath.item].idNumber ?? 0
+        navigationController?.show(controller, sender: nil)
+    }
 }

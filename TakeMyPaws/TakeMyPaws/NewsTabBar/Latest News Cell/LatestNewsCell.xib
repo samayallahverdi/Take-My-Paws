@@ -30,7 +30,7 @@
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6JF-ie-rtC">
-                        <rect key="frame" x="7" y="225.66666666666666" width="249" height="14.333333333333343"/>
+                        <rect key="frame" x="5" y="225.66666666666666" width="249" height="14.333333333333343"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="249" id="vpk-XM-VGq"/>
                         </constraints>
@@ -57,7 +57,7 @@
                 <constraint firstItem="x7C-Y3-97H" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="AGu-L5-aRX"/>
                 <constraint firstAttribute="trailing" secondItem="x7C-Y3-97H" secondAttribute="trailing" id="Asf-7J-gvG"/>
                 <constraint firstAttribute="bottom" secondItem="6JF-ie-rtC" secondAttribute="bottom" constant="5" id="Fa4-oK-saP"/>
-                <constraint firstItem="6JF-ie-rtC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="7" id="Th8-4F-o1Y"/>
+                <constraint firstItem="6JF-ie-rtC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="Th8-4F-o1Y"/>
                 <constraint firstItem="x7C-Y3-97H" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Wkx-Rb-Gfa"/>
                 <constraint firstItem="ie6-7t-3HM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="h3A-cR-GTY"/>
             </constraints>

@@ -35,7 +35,7 @@ class PetDetailsController: UIViewController {
         }
         viewModel.success = {
             self.detailsCollection.reloadData()
-            print(self.viewModel.petDetails)
+         
             
         }
     }

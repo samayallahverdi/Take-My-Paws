@@ -10,7 +10,7 @@ import Foundation
 class HomePageViewModel {
     
     var home = [HomeModel]()
-    var isFavoriteStatus = [Bool]()
+    var pets = [HomeModel]()
     var success: (() -> Void)?
     var error: ((String) -> Void)?
     
@@ -23,10 +23,9 @@ class HomePageViewModel {
                 self.error?(errorMessage)
                 print("error viewModel")
             } else if let data {
-//                print(data)
                 self.home.append(contentsOf: data)
+//                self.pets.append(contentsOf: data)
                 self.success?()
-//                print(self.home)
             }
             
         }
