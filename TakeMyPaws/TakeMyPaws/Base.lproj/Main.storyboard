@@ -441,10 +441,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X5D-u0-WPd">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X5D-u0-WPd">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="400"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.77216862208750681" blue="0.0248029021178784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="393" id="Xvr-Bl-Izh"/>
+                                    <constraint firstAttribute="height" constant="400" id="bI4-A2-J5q"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <integer key="value" value="20"/>
@@ -496,6 +499,9 @@
                             <constraint firstItem="eSH-GQ-nJj" firstAttribute="trailing" secondItem="nNr-h3-RMF" secondAttribute="trailing" id="LhK-eK-00X"/>
                             <constraint firstItem="nNr-h3-RMF" firstAttribute="trailing" secondItem="zMN-SH-YH5" secondAttribute="trailing" constant="82" id="PhG-wH-iLY"/>
                             <constraint firstItem="zMN-SH-YH5" firstAttribute="leading" secondItem="nNr-h3-RMF" secondAttribute="leading" constant="83" id="Q86-xl-nHX"/>
+                            <constraint firstItem="X5D-u0-WPd" firstAttribute="trailing" secondItem="nNr-h3-RMF" secondAttribute="trailing" id="Rul-Rv-CDv"/>
+                            <constraint firstItem="X5D-u0-WPd" firstAttribute="leading" secondItem="nNr-h3-RMF" secondAttribute="leading" id="e4b-KR-JXG"/>
+                            <constraint firstItem="X5D-u0-WPd" firstAttribute="top" secondItem="16D-0J-8RU" secondAttribute="top" id="pEe-v1-8kr"/>
                             <constraint firstItem="zMN-SH-YH5" firstAttribute="bottom" secondItem="nNr-h3-RMF" secondAttribute="bottom" id="vPd-ay-ZQz"/>
                             <constraint firstItem="zMN-SH-YH5" firstAttribute="top" secondItem="eSH-GQ-nJj" secondAttribute="bottom" constant="10" id="zlT-Ky-2Ob"/>
                         </constraints>
