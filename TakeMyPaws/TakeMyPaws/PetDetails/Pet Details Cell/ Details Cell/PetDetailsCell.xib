@@ -121,8 +121,10 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="CR4-LL-mwH" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="13" id="NC3-Q4-kxU"/>
+                <constraint firstItem="Rme-Fv-khf" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="13" id="Nsc-4c-9gi"/>
                 <constraint firstItem="CR4-LL-mwH" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="12" id="Udh-Hv-dZy"/>
                 <constraint firstItem="CR4-LL-mwH" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="WGI-gP-TMF"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="IdJ-dW-A3M" secondAttribute="trailing" constant="13" id="ffN-tV-BBD"/>
                 <constraint firstItem="CR4-LL-mwH" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="qb7-AL-qLz"/>
             </constraints>
             <size key="customSize" width="358" height="95"/>

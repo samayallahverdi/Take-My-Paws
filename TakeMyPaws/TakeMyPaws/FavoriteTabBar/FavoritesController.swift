@@ -16,6 +16,7 @@ class FavoritesController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         configureViewModel()
         configureRefreshControl()
         favoritesCollection.register(UINib(nibName: "FavoritePetCell", bundle: nil), forCellWithReuseIdentifier: "FavoritePetCell")
@@ -26,6 +27,7 @@ class FavoritesController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         viewModel.getFavoritesDetails()
+        tabBarController?.tabBar.isHidden = false
     }
     
     // MARK: - ViewModelConfiguration
