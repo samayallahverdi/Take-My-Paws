@@ -68,8 +68,7 @@ extension PetDetailsController: UICollectionViewDataSource, UICollectionViewDele
             return cell
         case .specification(let specification):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PetSpecificationCell", for: indexPath) as! PetSpecificationCell
-            cell.houseTrainedLabel.text = specification?.trained
-            cell.friendlyLabel.text = specification?.friendly
+            cell.configSpecification(friendly: specification?.friendly ?? "", trained:  specification?.trained ?? "")
             return cell
         case .description(let description):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PetDetailsAboutCell", for: indexPath) as! PetDetailsAboutCell

@@ -9,11 +9,9 @@ import UIKit
 
 class SeeAllController: UIViewController {
     
-    
     @IBOutlet weak var seeAllCollection: UICollectionView!
     
     var viewModel = SeeAllPageViewModel()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,12 +30,12 @@ class SeeAllController: UIViewController {
             self.seeAllCollection.reloadData()
         }
     }
+    
     func showPetDetail(petId: Int) {
         let coordinator = PetDetailsCoordinator(selectedId: petId,
-                                                 navigationController: navigationController ?? UINavigationController())
+                                                navigationController: navigationController ?? UINavigationController())
         coordinator.start()
     }
-
 }
 
 extension SeeAllController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -47,11 +45,11 @@ extension SeeAllController: UICollectionViewDataSource, UICollectionViewDelegate
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SeeAllPetsCell", for: indexPath) as! SeeAllPetsCell
         let pet = viewModel.pets[indexPath.item]
         cell.cellConfig(petName: pet.nameEn ?? "", shelterName: pet.shelterName ?? "", image: pet.imageOne ?? "")
-
+        
         if viewModel.pets[indexPath.item].gender == true {
             cell.genderConfiguration(gender: "male")
         } else {
@@ -65,6 +63,6 @@ extension SeeAllController: UICollectionViewDataSource, UICollectionViewDelegate
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-          .init(width: collectionView.frame.width/2-10, height: 260)
-      }
+        .init(width: collectionView.frame.width/2-10, height: 260)
+    }
 }

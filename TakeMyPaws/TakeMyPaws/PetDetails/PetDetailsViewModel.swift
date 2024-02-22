@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct PetDetailModel {
     let type: PetDetailType
 }
@@ -63,8 +62,7 @@ class PetDetailsViewModel {
                     self.petDetails.append(PetDetailModel(type: descriptionType))
                 }
                 
-                    self.success?()
-                
+                self.success?()
             }
         }
     }

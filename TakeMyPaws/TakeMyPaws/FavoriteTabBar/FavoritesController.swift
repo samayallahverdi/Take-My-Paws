@@ -30,7 +30,7 @@ class FavoritesController: UIViewController {
     
     func showPetDetail(petId: Int) {
         let coordinator = PetDetailsCoordinator(selectedId: petId,
-                                                 navigationController: navigationController ?? UINavigationController())
+                                                navigationController: navigationController ?? UINavigationController())
         coordinator.start()
     }
     
@@ -60,7 +60,7 @@ class FavoritesController: UIViewController {
     }
 }
 
-    // MARK: - UIConfiguration
+// MARK: - UIConfiguration
 
 extension FavoritesController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -69,7 +69,7 @@ extension FavoritesController: UICollectionViewDataSource, UICollectionViewDeleg
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FavoritePetCell", for: indexPath) as! FavoritePetCell
         let pet = viewModel.favorites[indexPath.item]
-
+        
         cell.cellConfig(sheltersName: pet.shelterName ?? "", petsName: pet.nameEn ?? "", image: pet.imageOne ?? "")
         
         if viewModel.favorites[indexPath.item].gender == true {

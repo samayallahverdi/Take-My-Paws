@@ -9,5 +9,4 @@ import Foundation
 
 enum SearchEndpoint: String {
     case search = "api/search"
-  
 }

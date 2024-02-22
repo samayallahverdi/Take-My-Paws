@@ -14,7 +14,6 @@ class HomePageViewModel {
     var success: (() -> Void)?
     var error: ((String) -> Void)?
     
-    
     private let manager = HomePageManager()
     
     func getHomeDetails(){
@@ -26,11 +25,6 @@ class HomePageViewModel {
                 self.home.append(contentsOf: data)
                 self.success?()
             }
-            
         }
     }
-    
-   
-    
-
 }

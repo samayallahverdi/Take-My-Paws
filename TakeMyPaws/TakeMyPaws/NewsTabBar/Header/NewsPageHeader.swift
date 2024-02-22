@@ -41,13 +41,12 @@ class NewsPageHeader: UICollectionReusableView {
         guard let newsDetailsController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainNewsViewAllController") as? MainNewsViewAllController else {
             return
         }
-
+        
         if let navigationController = self.window?.rootViewController as? UINavigationController {
             navigationController.show(newsDetailsController, sender: nil)
         } else {
             self.window?.rootViewController?.show(newsDetailsController, sender: nil)
         }
-
     }
 }
 // MARK: - UIConfiguration
@@ -69,7 +68,6 @@ extension NewsPageHeader: UICollectionViewDataSource, UICollectionViewDelegate {
         guard let newsDetailsController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewsDetailsController") as? NewsDetailsController else {
             return
         }
-        
         newsDetailsController.selectedNews = viewModel.latestNews[indexPath.item]
         
         if let navigationController = self.window?.rootViewController as? UINavigationController {

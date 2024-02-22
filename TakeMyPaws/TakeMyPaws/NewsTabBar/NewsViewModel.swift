@@ -13,8 +13,6 @@ class NewsViewModel {
     var latestNews = [NewsModel]()
     var success: (() -> Void)?
     var error: ((String) -> Void)?
-  
-    
     
     private let manager = NewsPageManager()
     
@@ -26,9 +24,7 @@ class NewsViewModel {
             } else if let data {
                 self.latestNews.append(contentsOf: data)
                 self.success?()
-
             }
-            
         }
     }
     
@@ -40,11 +36,7 @@ class NewsViewModel {
             } else if let data {
                 self.mainNews.append(contentsOf: data)
                 self.success?()
-
             }
-            
         }
     }
-    
-    
 }

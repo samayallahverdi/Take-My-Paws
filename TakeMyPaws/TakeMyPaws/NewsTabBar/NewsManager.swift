@@ -11,5 +11,4 @@ class NewsPageManager: NewsUseCase{
     func getData(endpoint: NewsEndpoint, completion: @escaping (([NewsModel]?, String?) -> Void)) {
         NetworkManager.request(model: [NewsModel].self, endpoint: endpoint.rawValue, completion: completion)
     }
-
 }

@@ -5,7 +5,6 @@
 //  Created by BUDLCIT on 2024. 02. 22..
 //
 
-
 import UIKit
 
 class AlertFunction: NSObject {

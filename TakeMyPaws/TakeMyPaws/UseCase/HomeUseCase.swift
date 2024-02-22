@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 protocol HomeUseCase {
     func getData(endpoint: HomeEndpoint, completion: @escaping (([HomeModel]?, String?) -> Void))
 }

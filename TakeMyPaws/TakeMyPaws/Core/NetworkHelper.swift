@@ -11,8 +11,6 @@ import Alamofire
 class NetworkHelper {
     
     static let baseURL = "https://takemypaws.com/"
-    
     static let headers: HTTPHeaders = ["Authorization": ""]
-    
     static let imagePath = "https://takemypaws.com/"
 }

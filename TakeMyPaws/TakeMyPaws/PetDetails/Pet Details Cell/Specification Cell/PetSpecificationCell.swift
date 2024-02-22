@@ -16,5 +16,8 @@ class PetSpecificationCell: UICollectionViewCell {
         super.awakeFromNib()
        
     }
-
+    func configSpecification(friendly: String, trained: String){
+        friendlyLabel.text = friendly
+        houseTrainedLabel.text = trained
+    }
 }

@@ -31,7 +31,7 @@ class HomePageController: UIViewController {
     // MARK: - Coordinator Configuration
     func showPetDetail(petId: Int) {
         let coordinator = PetDetailsCoordinator(selectedId: petId,
-                                                 navigationController: navigationController ?? UINavigationController())
+                                                navigationController: navigationController ?? UINavigationController())
         coordinator.start()
     }
     func seeAllPets(){
@@ -75,7 +75,7 @@ class HomePageController: UIViewController {
     }
 }
 
-    // MARK: - UIConfiguration
+// MARK: - UIConfiguration
 
 extension HomePageController: UICollectionViewDataSource, UICollectionViewDelegate {
     
@@ -114,7 +114,7 @@ extension HomePageController: UICollectionViewDataSource, UICollectionViewDelega
         showPetDetail(petId: viewModel.home[indexPath.item].idNumber ?? 0)
     }
 }
-    // MARK: - Protocol
+// MARK: - Protocol
 
 extension HomePageController: HomePageCellDelegate {
     func didTapFavoriteButton(index: Int, isFavorite: Bool) {
@@ -128,4 +128,3 @@ extension HomePageController: HomePageCellDelegate {
         }
     }
 }
-

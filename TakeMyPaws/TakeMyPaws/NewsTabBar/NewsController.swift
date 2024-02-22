@@ -8,7 +8,7 @@
 import UIKit
 
 class NewsController: UIViewController {
-
+    
     @IBOutlet weak var mainNewsCollection: UICollectionView!
     
     var viewModel = NewsViewModel()
@@ -27,14 +27,11 @@ class NewsController: UIViewController {
     // MARK: - ViewModelConfiguration
     
     func configureViewModel() {
-        
         viewModel.getMainNewsDetails()
-
         viewModel.error = { errorMessage in
             print("Error: \(errorMessage)")
         }
         viewModel.success = {
-            
             self.mainNewsCollection.reloadData()
         }
     }
@@ -42,7 +39,6 @@ class NewsController: UIViewController {
         let controller = storyboard?.instantiateViewController(withIdentifier: "LatestNewsViewAllController") as! LatestNewsViewAllController
         navigationController?.show(controller, sender: nil)
     }
-    
 }
 // MARK: - UIConfiguration
 extension NewsController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -64,8 +60,8 @@ extension NewsController {
     func cellRegister() {
         mainNewsCollection.register(UINib(nibName: "MainNewsCell", bundle: nil), forCellWithReuseIdentifier: "MainNewsCell")
         mainNewsCollection.register(UINib(nibName: "\(LatestNewsCell.self)", bundle: nil),
-                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                                withReuseIdentifier: "\(LatestNewsCell.self)")
+                                    forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                    withReuseIdentifier: "\(LatestNewsCell.self)")
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

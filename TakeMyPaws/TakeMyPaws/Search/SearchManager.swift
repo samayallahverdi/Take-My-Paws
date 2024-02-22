@@ -17,12 +17,10 @@ class SearchManager {
                                parameters: params
         ) { data, errorMessage in
             if let errorMessage {
-               completion(nil, errorMessage)
+                completion(nil, errorMessage)
             } else if let data {
                 completion(data, nil)
             }
         }
-        
-        
     }
 }

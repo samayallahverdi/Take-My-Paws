@@ -12,7 +12,6 @@ class SeeAllPageViewModel {
     var success: (() -> Void)?
     var error: ((String) -> Void)?
     
-    
     private let manager = HomePageManager()
     
     func getPetDetails(){
@@ -24,7 +23,6 @@ class SeeAllPageViewModel {
                 self.pets.append(contentsOf: data)
                 self.success?()
             }
-            
         }
     }
 }

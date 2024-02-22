@@ -9,7 +9,7 @@ import Foundation
 
 class SearchViewModel {
     var searchPets = [HomeModel]()
-   
+    
     var success: (() -> Void)?
     var error: ((String) -> Void)?
     

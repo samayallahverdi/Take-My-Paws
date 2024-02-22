@@ -28,11 +28,6 @@ class HomePageCell: UICollectionViewCell {
            }
        }
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-      
-    }
-      
       override func prepareForReuse() {
           super.prepareForReuse()
           isFavorite = true
@@ -50,7 +45,6 @@ class HomePageCell: UICollectionViewCell {
        @IBAction func favoriteButtonTapped(_ sender: Any) {
            isFavorite.toggle()
            delegate?.didTapFavoriteButton(index: self.tag, isFavorite: isFavorite)
-          
        }
 //    CellConfiguration
   func cellConfig(name: String, adress: String, image:String){
