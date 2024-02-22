@@ -13,7 +13,6 @@ class FavoritesViewModel {
     var success: (() -> Void)?
     var error: ((String) -> Void)?
     
-    
     private let manager = FavoritePageManager()
     
     func getFavoritesDetails(){

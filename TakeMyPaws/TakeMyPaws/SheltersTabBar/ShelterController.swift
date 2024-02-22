@@ -30,12 +30,13 @@ extension ShelterController: UICollectionViewDataSource, UICollectionViewDelegat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SheltersCell", for: indexPath) as! SheltersCell
         let shelter = viewModel.shelters[indexPath.item]
-        cell.shelterImage.loadImage(url: shelter.image ?? "")
-        cell.cellConfiguration(name: shelter.name ?? "", adress: shelter.address ?? "", description: shelter.description ?? "")
+
+        cell.cellConfiguration(name: shelter.name ?? "", adress: shelter.address ?? "", description: shelter.description ?? "", image: shelter.image ?? "")
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        contactAlert(message: viewModel.shelters[indexPath.item].contact ?? "")
+        AlertFunction.showAlert(view: self, title: "Contact", message: viewModel.shelters[indexPath.item].contact ?? "")
+        
     }
 }
 
@@ -44,7 +45,6 @@ extension ShelterController: UICollectionViewDataSource, UICollectionViewDelegat
 extension ShelterController {
     
     func configureViewModel() {
-        
         viewModel.getShelterDetails()
         viewModel.error = { errorMessage in
             print("Error: \(errorMessage)")
@@ -57,14 +57,5 @@ extension ShelterController {
     func cellRegister(){
         shelterCollection.register(UINib(nibName: "SheltersCell", bundle: nil), forCellWithReuseIdentifier: "SheltersCell")
     }
-    
 }
 
-extension ShelterController {
-    func contactAlert(message: String) {
-        let contactAlert = UIAlertController(title: "Contact", message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        contactAlert.addAction(okAction)
-        present(contactAlert, animated: true, completion: nil)
-    }
-}

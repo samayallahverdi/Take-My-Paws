@@ -14,13 +14,14 @@ class SeeAllController: UIViewController {
     
     var viewModel = SeeAllPageViewModel()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         seeAllCollection.register(UINib(nibName: "SeeAllPetsCell", bundle: nil), forCellWithReuseIdentifier: "SeeAllPetsCell")
         configureViewModel()
-//        self.tabBarController?.tabBar.isHidden = true
-        
+        title = "See all"
     }
+    
     func configureViewModel() {
         
         viewModel.getPetDetails()
@@ -31,6 +32,12 @@ class SeeAllController: UIViewController {
             self.seeAllCollection.reloadData()
         }
     }
+    func showPetDetail(petId: Int) {
+        let coordinator = PetDetailsCoordinator(selectedId: petId,
+                                                 navigationController: navigationController ?? UINavigationController())
+        coordinator.start()
+    }
+
 }
 
 extension SeeAllController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -43,23 +50,18 @@ extension SeeAllController: UICollectionViewDataSource, UICollectionViewDelegate
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SeeAllPetsCell", for: indexPath) as! SeeAllPetsCell
         let pet = viewModel.pets[indexPath.item]
-        cell.petNameLabel.text = pet.nameEn
-        cell.petImage.loadImage(url: pet.imageOne ?? "")
-        cell.shelterNameLabel.text = pet.shelterName
+        cell.cellConfig(petName: pet.nameEn ?? "", shelterName: pet.shelterName ?? "", image: pet.imageOne ?? "")
 
         if viewModel.pets[indexPath.item].gender == true {
-            cell.genderImage.image = UIImage(named: "male")
+            cell.genderConfiguration(gender: "male")
         } else {
-            cell.genderImage.image = UIImage(named: "female")
+            cell.genderConfiguration(gender: "female")
         }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let controller = storyboard?.instantiateViewController(withIdentifier: "PetDetailsController") as! PetDetailsController
-        controller.selectedId = viewModel.pets[indexPath.item].idNumber ?? 0
-        print(viewModel.pets[indexPath.item].idNumber ?? 0)
-        navigationController?.show(controller, sender: nil)
+        showPetDetail(petId: viewModel.pets[indexPath.item].idNumber ?? 0)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

@@ -10,12 +10,8 @@ import RealmSwift
 
 class PetDetailsController: UIViewController {
     
-    let realm = try! Realm()
-    var DB = DataBase()
-    
     var selectedId = 0
-    let viewModel = PetDetailsViewModel()
-    
+    var viewModel = PetDetailsViewModel()
     
     @IBOutlet weak var detailsCollection: UICollectionView!
     override func viewDidLoad() {
@@ -28,22 +24,18 @@ class PetDetailsController: UIViewController {
     // MARK: - ViewModelConfiguration
     
     func configureViewModel() {
-        
         viewModel.getPetInfoItems(petId: selectedId)
         viewModel.error = { errorMessage in
             print("Error: \(errorMessage)")
         }
         viewModel.success = {
             self.detailsCollection.reloadData()
-         
-            
         }
     }
     // MARK: - AdoptPetButton
     
     @IBAction func adoptionButtonTapped(_ sender: Any) {
         showAdoptionAlert()
-        
     }
 }
 // MARK: - UIConfiguration
@@ -125,19 +117,17 @@ extension PetDetailsController {
 extension PetDetailsController {
     
     func postAdoptionRequest(name: String, email: String, phoneNumber: String, comments: String?) {
-       
+        
         if let url = URL(string: "https://takemypaws.com/en/api/adopt") {
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-           
+            
             let parameters: [String: Any] = ["petId": selectedId,
                                              "name": name,
                                              "email": email,
                                              "phoneNumber": phoneNumber,
                                              "comment": comments ?? ""]
-            
-            
             
             do {
                 let jsonData = try JSONSerialization.data(withJSONObject: parameters)
@@ -159,9 +149,7 @@ extension PetDetailsController {
             
             task.resume()
         }
-        
     }
-    
 }
 
 // MARK: - AlertConfiguration
@@ -180,7 +168,6 @@ extension PetDetailsController {
         errorAlert.addAction(okAction)
         present(errorAlert, animated: true, completion: nil)
     }
-    
     
     func showAdoptionAlert() {
         
@@ -222,7 +209,6 @@ extension PetDetailsController {
                 return
             }
             
-           
             self.postAdoptionRequest(name: name, email: email, phoneNumber: phoneNumber, comments: alertController.textFields?[3].text)
         }
         
@@ -230,7 +216,4 @@ extension PetDetailsController {
         
         present(alertController, animated: true, completion: nil)
     }
-    
-    
-    
 }

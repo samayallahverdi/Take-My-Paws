@@ -8,7 +8,7 @@
 import UIKit
 
 class SeeAllPetsCell: UICollectionViewCell {
-
+    
     @IBOutlet weak var genderImage: UIImageView!
     @IBOutlet weak var shelterNameLabel: UILabel!
     @IBOutlet weak var petNameLabel: UILabel!
@@ -17,7 +17,16 @@ class SeeAllPetsCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-       
+        
     }
-
+    //    CellConfiguration
+    func cellConfig(petName: String, shelterName: String, image:String){
+        petImage.loadImage(url: image)
+        shelterNameLabel.text = shelterName
+        petNameLabel.text = petName
+    }
+    //    GenderConfiguration
+    func genderConfiguration(gender: String){
+        genderImage.image = UIImage(named: gender)
+    }    
 }

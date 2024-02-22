@@ -16,7 +16,12 @@ class MainNewsCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
-
+    //    CellConfiguration
+    func cellConfig(title: String, source: String, image:String){
+        newsImage.loadImage(url: image)
+        newsTitle.text = title
+        newsSource.text = source
+    }
 }

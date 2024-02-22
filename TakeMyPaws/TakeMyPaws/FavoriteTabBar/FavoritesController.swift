@@ -23,11 +23,15 @@ class FavoritesController: UIViewController {
         favoritesCollection.reloadData()
     }
     
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         viewModel.getFavoritesDetails()
         tabBarController?.tabBar.isHidden = false
+    }
+    
+    func showPetDetail(petId: Int) {
+        let coordinator = PetDetailsCoordinator(selectedId: petId,
+                                                 navigationController: navigationController ?? UINavigationController())
+        coordinator.start()
     }
     
     // MARK: - ViewModelConfiguration
@@ -41,7 +45,6 @@ class FavoritesController: UIViewController {
             self.favoritesCollection.reloadData()
             self.refreshControl.endRefreshing()
             print(self.viewModel.favorites)
-            
         }
     }
     
@@ -55,7 +58,6 @@ class FavoritesController: UIViewController {
     @objc func refreshData() {
         viewModel.getFavoritesDetails()
     }
-    
 }
 
     // MARK: - UIConfiguration
@@ -67,21 +69,17 @@ extension FavoritesController: UICollectionViewDataSource, UICollectionViewDeleg
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FavoritePetCell", for: indexPath) as! FavoritePetCell
         let pet = viewModel.favorites[indexPath.item]
-        cell.petImage.loadImage(url: pet.imageOne ?? "" )
-        cell.petName.text = pet.nameEn
-        cell.shelterName.text = pet.shelterName
-        
+
+        cell.cellConfig(sheltersName: pet.shelterName ?? "", petsName: pet.nameEn ?? "", image: pet.imageOne ?? "")
         
         if viewModel.favorites[indexPath.item].gender == true {
-            cell.genderImage.image = UIImage(named: "male")
+            cell.genderConfiguration(gender: "male")
         } else {
-            cell.genderImage.image = UIImage(named: "female")
+            cell.genderConfiguration(gender: "female")
         }
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let controller = storyboard?.instantiateViewController(withIdentifier: "PetDetailsController") as! PetDetailsController
-        controller.selectedId = viewModel.favorites[indexPath.item].idNumber ?? 0
-        navigationController?.show(controller, sender: nil)
+        showPetDetail(petId: viewModel.favorites[indexPath.item].idNumber ?? 0)
     }
 }

@@ -425,6 +425,7 @@
                             <constraint firstAttribute="bottom" secondItem="kWV-b3-og1" secondAttribute="bottom" id="yyY-9y-zhw"/>
                         </constraints>
                     </view>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="seeAllCollection" destination="kWV-b3-og1" id="JnG-oE-IlA"/>
                     </connections>

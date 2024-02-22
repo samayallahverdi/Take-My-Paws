@@ -19,10 +19,11 @@ class SheltersCell: UICollectionViewCell {
         
     }
     
-    func cellConfiguration(name: String, adress: String, description: String ) {
+    func cellConfiguration(name: String, adress: String, description: String, image: String) {
         shelterName.text = name
         shelterDescription.text = description
         shelterAdressLabel.text = adress
+        shelterImage.loadImage(url: image)
     }
 
 }

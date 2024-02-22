@@ -12,6 +12,6 @@ class PetImageCell: UICollectionViewCell {
     @IBOutlet weak var petImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+       
     }
 }

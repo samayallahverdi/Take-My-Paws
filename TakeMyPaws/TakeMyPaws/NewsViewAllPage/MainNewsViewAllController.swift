@@ -20,7 +20,6 @@ class MainNewsViewAllController: UIViewController {
         cellRegister()
     }
     
-    
     func configureViewModel() {
         
         viewModel.getMainNewsDetails()
@@ -33,8 +32,6 @@ class MainNewsViewAllController: UIViewController {
             self.mainNewsCollection.reloadData()
         }
     }
-    
-    
 }
 
 // MARK: - UIConfiguration

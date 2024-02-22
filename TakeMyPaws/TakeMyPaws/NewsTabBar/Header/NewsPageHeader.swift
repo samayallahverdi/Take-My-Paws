@@ -11,6 +11,7 @@ class NewsPageHeader: UICollectionReusableView {
     
     @IBOutlet weak var latestNewsCollection: UICollectionView!
     
+    var viewModel = NewsViewModel()
     
     override func awakeFromNib() {
         latestNewsCollection.dataSource = self
@@ -20,8 +21,6 @@ class NewsPageHeader: UICollectionReusableView {
         latestNewsCollection.register(UINib(nibName: "LatestNewsCell", bundle: nil), forCellWithReuseIdentifier: "LatestNewsCell")
         print("salam")
     }
-    var viewModel = NewsViewModel()
-    
     
     // MARK: - ViewModelConfiguration
     
@@ -46,7 +45,6 @@ class NewsPageHeader: UICollectionReusableView {
         if let navigationController = self.window?.rootViewController as? UINavigationController {
             navigationController.show(newsDetailsController, sender: nil)
         } else {
-            // If the root view controller is not a navigation controller, present the controller modally
             self.window?.rootViewController?.show(newsDetailsController, sender: nil)
         }
 
@@ -62,9 +60,8 @@ extension NewsPageHeader: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LatestNewsCell", for: indexPath) as! LatestNewsCell
         let news = viewModel.latestNews[indexPath.item]
-        cell.latestNewsImage.loadImage(url: news.image ?? "")
-        cell.latestNewsTitle.text = news.newsEn
-        cell.latestNewsSource.text = "Published by: \(news.publisherName ?? "")"
+        
+        cell.cellConfig(title: news.newsEn ?? "", source: "Published by: \(news.publisherName ?? "")", image: news.image ?? "")
         return cell
     }
     

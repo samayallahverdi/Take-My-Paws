@@ -18,6 +18,11 @@ class NewsController: UIViewController {
         configureViewModel()
         cellRegister()
     }
+    func showAllNews(newsId: NewsModel) {
+        let coordinator = NewsDetailsCoordinator(selectedId: newsId,
+                                                 navigationController: navigationController ?? UINavigationController())
+        coordinator.start()
+    }
     
     // MARK: - ViewModelConfiguration
     
@@ -47,15 +52,12 @@ extension NewsController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainNewsCell", for: indexPath) as! MainNewsCell
         let news = viewModel.mainNews[indexPath.item]
-        cell.newsImage.loadImage(url: news.image ?? "")
-        cell.newsSource.text = "Published by: \(news.publisherName ?? "")"
-        cell.newsTitle.text = news.newsEn
+        
+        cell.cellConfig(title: news.newsEn ?? "", source: "Published by: \(news.publisherName ?? "")", image: news.image ?? "")
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let controller = storyboard?.instantiateViewController(withIdentifier: "NewsDetailsController") as! NewsDetailsController
-        controller.selectedNews = viewModel.mainNews[indexPath.item]
-        navigationController?.present(controller, animated: true)
+        showAllNews(newsId: viewModel.mainNews[indexPath.item])
     }
 }
 extension NewsController {
@@ -65,10 +67,10 @@ extension NewsController {
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: "\(LatestNewsCell.self)")
     }
+    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "NewsPageHeader", for: indexPath) as! NewsPageHeader
-      
         return headerView
     }
 }

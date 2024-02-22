@@ -11,7 +11,6 @@ protocol HomePageCellDelegate {
     func didTapFavoriteButton(index: Int, isFavorite: Bool)
 }
 
-
 class HomePageCell: UICollectionViewCell {
 
     @IBOutlet weak var petImage: UIImageView!
@@ -22,8 +21,6 @@ class HomePageCell: UICollectionViewCell {
     
     var delegate: HomePageCellDelegate?
 
-    
-    
     var isFavorite: Bool = true {
 
            didSet {
@@ -31,15 +28,10 @@ class HomePageCell: UICollectionViewCell {
            }
        }
 
-    
     override func awakeFromNib() {
         super.awakeFromNib()
       
     }
-//    func configure(with isFavorite: Bool) {
-//          self.isFavorite = isFavorite
-//          updateButtonAppearance()
-//      }
       
       override func prepareForReuse() {
           super.prepareForReuse()
@@ -60,4 +52,14 @@ class HomePageCell: UICollectionViewCell {
            delegate?.didTapFavoriteButton(index: self.tag, isFavorite: isFavorite)
           
        }
+//    CellConfiguration
+  func cellConfig(name: String, adress: String, image:String){
+        petImage.loadImage(url: image)
+        petName.text = name
+        petAdress.text = adress
+    }
+//    GenderConfiguration
+    func genderConfiguration(gender: String){
+        gerderImage.image = UIImage(named: gender)
+    }
    }

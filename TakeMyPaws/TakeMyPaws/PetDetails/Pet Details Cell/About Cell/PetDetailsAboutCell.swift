@@ -12,7 +12,7 @@ class PetDetailsAboutCell: UICollectionViewCell {
     @IBOutlet weak var petAbout: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
 }

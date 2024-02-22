@@ -17,5 +17,10 @@ class LatestNewsCell: UICollectionViewCell {
         super.awakeFromNib()
         
     }
-
+    //    CellConfiguration
+    func cellConfig(title: String, source: String, image:String){
+        latestNewsImage.loadImage(url: image)
+        latestNewsTitle.text = title
+        latestNewsSource.text = source
+    }
 }

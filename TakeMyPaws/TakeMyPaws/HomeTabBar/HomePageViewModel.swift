@@ -24,7 +24,6 @@ class HomePageViewModel {
                 print("error viewModel")
             } else if let data {
                 self.home.append(contentsOf: data)
-//                self.pets.append(contentsOf: data)
                 self.success?()
             }
             
