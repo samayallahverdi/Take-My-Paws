@@ -12,3 +12,4 @@ class HomePageManager: HomeUseCase {
         NetworkManager.request(model: [HomeModel].self, endpoint: endpoint.rawValue, completion: completion)
     }
 }
+

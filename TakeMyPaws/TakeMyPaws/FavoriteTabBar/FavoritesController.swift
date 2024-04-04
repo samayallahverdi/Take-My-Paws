@@ -13,6 +13,7 @@ class FavoritesController: UIViewController {
     
     let viewModel = FavoritesViewModel()
     let refreshControl = UIRefreshControl()
+    var postModel = PostModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +45,7 @@ class FavoritesController: UIViewController {
         viewModel.success = {
             self.favoritesCollection.reloadData()
             self.refreshControl.endRefreshing()
-            print(self.viewModel.favorites)
+            
         }
     }
     
@@ -69,17 +70,38 @@ extension FavoritesController: UICollectionViewDataSource, UICollectionViewDeleg
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FavoritePetCell", for: indexPath) as! FavoritePetCell
         let pet = viewModel.favorites[indexPath.item]
-        
+
         cell.cellConfig(sheltersName: pet.shelterName ?? "", petsName: pet.nameEn ?? "", image: pet.imageOne ?? "")
-        
+
         if viewModel.favorites[indexPath.item].gender == true {
             cell.genderConfiguration(gender: "male")
         } else {
             cell.genderConfiguration(gender: "female")
         }
+        
+        //        Protocol Configuration
+        cell.tag = indexPath.item
+        cell.delegate = self
+        
         return cell
+        
+        
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         showPetDetail(petId: viewModel.favorites[indexPath.item].idNumber ?? 0)
     }
+    
+
 }
+// MARK: - Protocol
+
+extension FavoritesController: FavoritesPageCellDelegate {
+    func didTapUnSaveButton(index: Int, isFavorite: Bool) {
+        let petId = viewModel.favorites[index].idNumber ?? 0
+        postModel.deleteFavorite(petId: petId, fullName: "samaya")
+       
+    }
+    
+  
+}
+

@@ -8,14 +8,14 @@
 import Foundation
 
 class HomePageViewModel {
-    
+
     var home = [HomeModel]()
     var pets = [HomeModel]()
     var success: (() -> Void)?
     var error: ((String) -> Void)?
-    
+
     private let manager = HomePageManager()
-    
+
     func getHomeDetails(){
         manager.getData(endpoint: .main) { data, errorMessage in
             if let errorMessage {
@@ -28,3 +28,4 @@ class HomePageViewModel {
         }
     }
 }
+

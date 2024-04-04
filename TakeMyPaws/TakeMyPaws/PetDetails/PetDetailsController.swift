@@ -173,14 +173,14 @@ extension PetDetailsController {
         let alertController = UIAlertController(title: "Adopt a Pet", message: "Please provide the following information:", preferredStyle: .alert)
         
         alertController.addTextField { (textField) in
-            textField.placeholder = "Your Name"
+            textField.placeholder = "Name..."
         }
         alertController.addTextField { (textField) in
-            textField.placeholder = "Your Email"
+            textField.placeholder = "Email..."
             textField.keyboardType = .emailAddress
         }
         alertController.addTextField { (textField) in
-            textField.placeholder = "Your Phone Number"
+            textField.placeholder = "Phone Number..."
             textField.keyboardType = .phonePad
         }
         alertController.addTextField { (textField) in

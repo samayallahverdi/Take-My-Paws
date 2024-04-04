@@ -10,6 +10,4 @@ class PetDetailsManager {
     func getData(idNumber: Int?, endpoint: PetDetailsEndpoint, completion: @escaping (([PetDetailsModel]?, String?) -> Void)) {
         NetworkManager.request(model: [PetDetailsModel].self, endpoint: "\(endpoint.rawValue)\(idNumber ?? 0)", completion: completion)
     }
-    
-    
 }

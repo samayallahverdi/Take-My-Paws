@@ -71,7 +71,8 @@ extension NewsPageHeader: UICollectionViewDataSource, UICollectionViewDelegate {
         newsDetailsController.selectedNews = viewModel.latestNews[indexPath.item]
         
         if let navigationController = self.window?.rootViewController as? UINavigationController {
-            navigationController.pushViewController(newsDetailsController, animated: true)
+//            navigationController.pushViewController(newsDetailsController, animated: true)
+            navigationController.show(newsDetailsController, sender: nil)
         } else {
             
             self.window?.rootViewController?.present(newsDetailsController, animated: true, completion: nil)

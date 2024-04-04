@@ -21,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Samantha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKR-mY-bCk">
-                                <rect key="frame" x="70" y="10" width="163" height="21"/>
+                                <rect key="frame" x="70" y="10" width="85" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -34,12 +34,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ML3-Pk-Omj">
-                                <rect key="frame" x="205" y="26" width="25" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="Npz-8B-MP6">
                                 <rect key="frame" x="67" y="58" width="16" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eP0-v2-azv">
+                                <rect key="frame" x="227" y="4" width="19" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="filledHeart"/>
+                                <connections>
+                                    <action selector="unSaveButtonClicked:" destination="gTV-IL-0wX" eventType="touchUpInside" id="WsU-mJ-jAS"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ML3-Pk-Omj">
+                                <rect key="frame" x="135" y="33" width="20" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -68,11 +77,13 @@
                 <outlet property="petImage" destination="Qan-2H-LBZ" id="2Ul-kR-R4i"/>
                 <outlet property="petName" destination="OKR-mY-bCk" id="Z8D-sC-zJd"/>
                 <outlet property="shelterName" destination="txP-hw-1tb" id="C7O-bw-pdw"/>
+                <outlet property="unSaveButton" destination="eP0-v2-azv" id="X31-Ow-LpA"/>
             </connections>
             <point key="canvasLocation" x="254.96183206106869" y="-71.83098591549296"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="filledHeart" width="17" height="18"/>
         <image name="location" width="20" height="21"/>
         <image name="pisik" width="229" height="204"/>
     </resources>

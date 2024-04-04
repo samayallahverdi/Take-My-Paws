@@ -11,16 +11,16 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="LatestNewsCell" customModule="TakeMyPaws" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="254" height="245"/>
+            <rect key="frame" x="0.0" y="0.0" width="240" height="245"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="254" height="245"/>
+                <rect key="frame" x="0.0" y="0.0" width="240" height="245"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x7C-Y3-97H">
-                        <rect key="frame" x="0.0" y="0.0" width="254" height="166"/>
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="166"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="254" id="DK0-tM-qnY"/>
+                            <constraint firstAttribute="width" constant="240" id="DK0-tM-qnY"/>
                             <constraint firstAttribute="height" constant="166" id="Ui6-AY-sBp"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -39,10 +39,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ie6-7t-3HM">
-                        <rect key="frame" x="5" y="173" width="249" height="40"/>
+                        <rect key="frame" x="5" y="173" width="235" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="0BA-Cp-veq"/>
-                            <constraint firstAttribute="width" constant="249" id="2na-zA-JMl"/>
+                            <constraint firstAttribute="width" constant="235" id="2na-zA-JMl"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
@@ -61,7 +61,7 @@
                 <constraint firstItem="x7C-Y3-97H" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Wkx-Rb-Gfa"/>
                 <constraint firstItem="ie6-7t-3HM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="h3A-cR-GTY"/>
             </constraints>
-            <size key="customSize" width="258" height="295"/>
+            <size key="customSize" width="244" height="295"/>
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                     <integer key="value" value="15"/>
@@ -72,7 +72,7 @@
                 <outlet property="latestNewsSource" destination="6JF-ie-rtC" id="y9j-iK-4hg"/>
                 <outlet property="latestNewsTitle" destination="ie6-7t-3HM" id="f22-1Y-0fA"/>
             </connections>
-            <point key="canvasLocation" x="83.969465648854964" y="-43.309859154929576"/>
+            <point key="canvasLocation" x="73.282442748091597" y="-43.309859154929576"/>
         </collectionViewCell>
     </objects>
     <resources>
